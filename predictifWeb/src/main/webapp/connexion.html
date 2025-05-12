@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>Connexion</title>
+</head><body>
+
+  <h1>Connexion</h1>
+
+  <table>
+    <tr>
+      <th><label for="mail">Mail&nbsp;:</label></th>
+      <td><input type="text" id="mail" placeholder="marie.curie@gmail.com"></td>
+    </tr>
+    <tr>
+      <th><label for="mdp">Mot de passe&nbsp;:</label></th>
+      <td><input type="password" id="mdp" placeholder="••••••••••••••••"></td>
+    </tr>
+    <tr>
+      <td colspan="2" style="text-align:center">
+        <button id="btnValider">Valider</button>
+      </td>
+    </tr>
+  </table>
+
+  <p>
+    Vous n’avez pas de compte&nbsp;?
+    <a href="inscription.html">Inscrivez-vous maintenant !</a>
+  </p>
+  <p>
+    Vous êtes employé ?
+    <a href="connexionEmploye.html">Connectez-vous ici !</a>
+  </p>
+
+  <!-- Zone d’erreur -->
+  <div id="error" role="alert" style="color:red;"></div>
+
+  <!-- Inclusion du script externe -->
+  <script src="js/connexion.js"></script>
+</body>
+</html>
