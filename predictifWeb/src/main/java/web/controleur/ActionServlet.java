@@ -18,12 +18,14 @@ import web.modele.ConnecterClientAction;
 import web.modele.ConnecterEmployeAction;
 import web.modele.DeconnecterClientAction;
 import web.modele.InscrireClientAction;
+import web.modele.ProchaineConsultationAction;
 import web.modele.ProfilAstralAction;
 import web.vue.CheckSessionSerialisation;
 import web.vue.ConnecterClientSerialisation;
 import web.vue.ConnecterEmployeSerialisation;
 import web.vue.DeconnecterClientSerialisation;
 import web.vue.InscrireClientSerialisation;
+import web.vue.ProchaineConsultationSerialisation;
 import web.vue.ProfilAstralSerialisation;
 
 /**
@@ -77,6 +79,11 @@ protected void processRequest(HttpServletRequest request, HttpServletResponse re
         case "connecterEmploye":
             new ConnecterEmployeAction(service).execute(request);
             new ConnecterEmployeSerialisation().appliquer(request, response);
+            break;
+            
+        case "prochaineConsultation":
+            new ProchaineConsultationAction(service).execute(request);
+            new ProchaineConsultationSerialisation().appliquer(request, response);
             break;
 
         default:

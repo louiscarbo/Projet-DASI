@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>Accueil employé</title>
+</head>
+<body>
+
+  <header style="display:flex; justify-content:flex-end; align-items:center;">
+    <button id="btnMenu">☰ Menu</button>
+  </header>
+
+  <main>
+    <h1>Menu Principal</h1>
+    <h2 id="welcome">Bienvenue, !</h2>
+
+    <div style="display:flex; gap:2em;">
+
+      <!-- Carte Prochain Appel -->
+      <div id="cardNext" style="border:1px solid #000; border-radius:1em;
+           padding:1em; text-align:center; width:200px; opacity:1;">
+        <h3>Prochain Appel</h3>
+        <div>📞</div>
+        <button id="btnNext" style="margin-top:1em;">Consulter</button>
+      </div>
+
+      <!-- Carte Statistiques -->
+      <div id="cardStats" style="border:1px solid #000; border-radius:1em;
+                                padding:1em; text-align:center; width:200px;">
+        <h3>Statistiques</h3>
+        <div>📊</div>
+        <button id="btnStats" style="margin-top:1em;">Consulter</button>
+      </div>
+
+    </div>
+
+    <div id="error" role="alert" style="color:red; margin-top:1em;"></div>
+  </main>
+
+  <!-- menu.js pour burger/déco -->
+  <script src="js/menu.js"></script>
+  <script src="js/espaceEmploye.js"></script>
+</body>
+</html>
