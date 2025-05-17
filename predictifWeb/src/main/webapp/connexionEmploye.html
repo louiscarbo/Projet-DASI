@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>Connexion employé</title>
+</head>
+<body>
+  <main>
+    <h1>Connexion employé</h1>
+
+    <table>
+      <tr>
+        <th><label for="mailEmp">Mail&nbsp;:</label></th>
+        <td><input type="text" id="mailEmp" placeholder="marie.curie@entreprise.com"></td>
+      </tr>
+      <tr>
+        <th><label for="mdpEmp">Mot de passe&nbsp;:</label></th>
+        <td><input type="password" id="mdpEmp" placeholder="••••••••••••••••"></td>
+      </tr>
+      <tr>
+        <td colspan="2" style="text-align:center">
+          <button id="btnValiderEmp">Valider</button>
+        </td>
+      </tr>
+    </table>
+
+    <p>
+      Vous n’êtes pas employé&nbsp;?
+      <a href="connexion.html">Retour à la connexion client</a>
+    </p>
+
+    <div id="error" role="alert" style="color:red;"></div>
+  </main>
+
+  <script src="js/connexionEmploye.js"></script>
+</body>
+</html>

@@ -15,11 +15,13 @@ import javax.servlet.http.HttpServletResponse;
 import service.Service;
 import web.modele.CheckSessionAction;
 import web.modele.ConnecterClientAction;
+import web.modele.ConnecterEmployeAction;
 import web.modele.DeconnecterClientAction;
 import web.modele.InscrireClientAction;
 import web.modele.ProfilAstralAction;
 import web.vue.CheckSessionSerialisation;
 import web.vue.ConnecterClientSerialisation;
+import web.vue.ConnecterEmployeSerialisation;
 import web.vue.DeconnecterClientSerialisation;
 import web.vue.InscrireClientSerialisation;
 import web.vue.ProfilAstralSerialisation;
@@ -70,6 +72,11 @@ protected void processRequest(HttpServletRequest request, HttpServletResponse re
         case "profilAstral":
             new ProfilAstralAction(service).execute(request);
             new ProfilAstralSerialisation().appliquer(request, response);
+            break;
+            
+        case "connecterEmploye":
+            new ConnecterEmployeAction(service).execute(request);
+            new ConnecterEmployeSerialisation().appliquer(request, response);
             break;
 
         default:
