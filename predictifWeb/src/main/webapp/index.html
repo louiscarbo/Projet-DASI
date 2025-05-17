@@ -6,26 +6,28 @@
 </head>
 <body>
 
-  <!-- 1. Bouton Menu -->
   <header>
     <nav>
-      <a href="menu.html">Menu</a>
-      <!-- 2. Boutons Se connecter et S'inscrire -->
-      <a href="connexion.html">Se connecter</a>
-      <a href="inscription.html">S’inscrire</a>
+      <!-- 1) Le bouton Menu, caché par défaut -->
+      <button id="btnMenu" style="display:none">☰ Menu</button>
+
+      <!-- 2) Les liens Se connecter / S’inscrire, visibles par défaut -->
+      <span id="authLinks">
+        <a href="connexion.html">Se connecter</a>
+        <a href="inscription.html">S’inscrire</a>
+      </span>
     </nav>
   </header>
 
   <main>
-    <!-- 3. Titre -->
     <h1>PREDICT’IF</h1>
-
-    <!-- 4. Texte de présentation -->
     <p>
-      PREDICT’IF est un cabinet de voyance par téléphone. Nos médiums sont des spirites, cartomanciens ou astrologues. Reconnus internationalement, ils ont été sélectionnés avec la plus grande rigueur, et sont réunis pour travailler avec précision et sérieux dans leur spécialité respective. Leurs prédictions personnalisées répondent à toutes les questions d’ordre sentimental, professionnel et psychologique dans le plus strict respect de la déontologie.
+      PREDICT’IF est un cabinet de voyance par téléphone. Nos médiums sont des spirites, cartomanciens ou astrologues. 
+      Reconnus internationalement, ils ont été sélectionnés avec la plus grande rigueur, et sont réunis pour travailler 
+      avec précision et sérieux dans leur spécialité respective. Leurs prédictions personnalisées répondent à toutes 
+      les questions d’ordre sentimental, professionnel et psychologique dans le plus strict respect de la déontologie.
     </p>
 
-    <!-- 5. Section “À propos de nos médiums” -->
     <section>
       <h2>À propos de nos médiums</h2>
       <div>
@@ -45,5 +47,24 @@
     </section>
   </main>
 
+  <!-- 3) Le menu latéral, caché par défaut -->
+  <aside id="sideMenu" style="display:none; position:fixed; top:0; left:0;
+                             width:250px; height:100%; background:#fff; box-shadow:2px 0 5px rgba(0,0,0,.3);
+                             padding:1em; overflow-y:auto;">
+    <ul style="list-style:none; padding:0; margin:0;">
+      <li><a href="accueil.html">🏠 Accueil</a></li>
+      <li><a href="choixMedium.html">🔍 Choisir un médium</a></li>
+      <li><a href="profilAstral.html">✨ Profil astral</a></li>
+      <li><a href="historique.html">⏱️ Historique des consultations</a></li>
+      <li><a href="monCompte.html">👤 Mon compte</a></li>
+      <li><a href="#" id="logoutLink">⏻ Déconnexion</a></li>
+    </ul>
+  </aside>
+
+  <!-- 4) Zone d’erreur / infos éventuelles -->
+  <div id="error" role="alert" style="color:red;"></div>
+
+  <!-- 5) Inclusion du script qui pilote tout -->
+  <script src="js/index.js"></script>
 </body>
 </html>

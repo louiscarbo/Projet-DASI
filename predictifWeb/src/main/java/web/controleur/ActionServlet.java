@@ -13,9 +13,13 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import service.Service;
+import web.modele.CheckSessionAction;
 import web.modele.ConnecterClientAction;
+import web.modele.DeconnecterClientAction;
 import web.modele.InscrireClientAction;
+import web.vue.CheckSessionSerialisation;
 import web.vue.ConnecterClientSerialisation;
+import web.vue.DeconnecterClientSerialisation;
 import web.vue.InscrireClientSerialisation;
 
 /**
@@ -34,31 +38,38 @@ public class ActionServlet extends HttpServlet {
      * @throws ServletException if a servlet-specific error occurs
      * @throws IOException if an I/O error occurs
      */
-    protected void processRequest(HttpServletRequest request, HttpServletResponse response)
-            throws ServletException, IOException {
-        
-        String todo = request.getParameter("todo");
-        System.out.println("Todo : " + todo);
-        
-        Service service = new Service();
+protected void processRequest(HttpServletRequest request, HttpServletResponse response)
+        throws ServletException, IOException {
+    
+    String todo = request.getParameter("todo");
+    Service service = new Service();
 
-        switch (todo) {
-            case "connecterClient": {
-                new ConnecterClientAction(service).execute(request);
-                new ConnecterClientSerialisation().appliquer(request, response);
-                break;
-            }
-            case "inscrireClient": {
-                new InscrireClientAction(service).execute(request);
-                new InscrireClientSerialisation().appliquer(request, response);
-                break;
-            }
-            default: {
-                break;
-            }
-        }
+    switch (todo) {
+        case "connecterClient":
+            new ConnecterClientAction(service).execute(request);
+            new ConnecterClientSerialisation().appliquer(request, response);
+            break;
 
+        case "inscrireClient":
+            new InscrireClientAction(service).execute(request);
+            new InscrireClientSerialisation().appliquer(request, response);
+            break;
+
+        case "checkSession":
+            new CheckSessionAction(service).execute(request);
+            new CheckSessionSerialisation().appliquer(request, response);
+            break;
+
+        case "deconnecter":
+            new DeconnecterClientAction(service).execute(request);
+            new DeconnecterClientSerialisation().appliquer(request, response);
+            break;
+
+        default:
+            response.sendError(HttpServletResponse.SC_BAD_REQUEST, "Action inconnue");
+            break;
     }
+}
 
     @Override
     public void init() throws ServletException {
