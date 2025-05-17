@@ -51,11 +51,44 @@ public class Main {
         service.initMediums();
         service.initEmployes();
         
-        
         scenarioClient();
+        
+        injecterConsultationTest();
 
         JpaUtil.fermerFabriquePersistance();
 
+    }
+    
+    private static void injecterConsultationTest() throws ParseException, IOException {
+        Service service = new Service();
+
+        // 1) Créer ou retrouver un client de test
+        Client testClient = new Client(
+            "Dupont", "Jean",
+            "01/01/1990",
+            "123 rue Exemple",
+            "0123456789",
+            "jean.dupont@example.com",
+            "motdepasse"
+        );
+        Service.inscrireClient(testClient);
+
+        // 2) Récupérer un médium pour la consultation
+        List<Medium> mediums = service.rechercherListeMedium(true, true, true, "", "");
+        if (mediums.isEmpty()) {
+            System.err.println("Aucun médium disponible pour test.");
+            return;
+        }
+        Medium med = mediums.get(0);
+
+        // 3) Générer la consultation « ATTENTE »
+        Consultation c = service.trouverConsultation(testClient, med);
+        if (c == null) {
+            System.err.println("Echec de création de la consultation test.");
+        } else {
+            System.out.println("✔ Consultation test injectée en base, état=" + c.getEtat()
+                + ", id=" + c.getId());
+        }
     }
     
     private static void scenarioEmploye(Employe e) throws IOException
