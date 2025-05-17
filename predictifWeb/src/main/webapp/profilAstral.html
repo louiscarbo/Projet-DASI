@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>Profil astral</title>
+</head>
+<body>
+
+  <header style="display:flex; justify-content:space-between; align-items:center;">
+    <!-- Bouton burger pour ouvrir/fermer le menu -->
+    <button id="btnMenu" style="display:none;font-size:1.5em;">☰</button>
+    <!-- Lien “Accueil” permanent -->
+    <a href="/" style="font-size:1.2em;">🏠 Accueil</a>
+  </header>
+
+  <main>
+    <h1>Profil astral</h1>
+
+    <div>
+      <div>
+        <h2>Signe du Zodiaque</h2>
+        <span id="zodiaqueValue"></span>
+      </div>
+      <div>
+        <h2>Signe chinois</h2>
+        <span id="sgnChinoisValue"></span>
+      </div>
+      <div>
+        <h2>Animal totem</h2>
+        <span id="animalValue"></span>
+      </div>
+      <div>
+        <h2>Couleur totem</h2>
+        <span id="couleurValue"></span>
+      </div>
+    </div>
+  </main>
+
+  <!-- Zone pour les éventuelles erreurs -->
+  <div id="error" style="color:red;"></div>
+
+  <!-- Scripts communs et spécifiques -->
+  <script src="js/menu.js"></script>
+  <script src="js/profilAstral.js"></script>
+</body>
+</html>

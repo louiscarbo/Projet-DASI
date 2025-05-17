@@ -37,7 +37,7 @@ document.addEventListener('DOMContentLoaded', () => {
       // 5. Traitement selon le résultat
       if (data.success) {
         // identifiants corrects → accès à l’espace client
-        window.location.href = 'espaceClient.html';
+        window.location.href = '/';
       } else {
         // échec de connexion → affichage du message d’erreur
         errDiv.textContent = data.message || 'Identifiants invalides.';

@@ -65,7 +65,7 @@ document.addEventListener('DOMContentLoaded', () => {
       // 5. Traitement du retour
       if (data.success) {
         // Inscription OK → renvoyer vers la connexion
-        window.location.href = 'espaceClient.html';
+        window.location.href = '/';
       } else {
         errDiv.textContent = data.message || 'Erreur lors de l’inscription.';
       }

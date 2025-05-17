@@ -17,10 +17,12 @@ import web.modele.CheckSessionAction;
 import web.modele.ConnecterClientAction;
 import web.modele.DeconnecterClientAction;
 import web.modele.InscrireClientAction;
+import web.modele.ProfilAstralAction;
 import web.vue.CheckSessionSerialisation;
 import web.vue.ConnecterClientSerialisation;
 import web.vue.DeconnecterClientSerialisation;
 import web.vue.InscrireClientSerialisation;
+import web.vue.ProfilAstralSerialisation;
 
 /**
  *
@@ -63,6 +65,11 @@ protected void processRequest(HttpServletRequest request, HttpServletResponse re
         case "deconnecter":
             new DeconnecterClientAction(service).execute(request);
             new DeconnecterClientSerialisation().appliquer(request, response);
+            break;
+            
+        case "profilAstral":
+            new ProfilAstralAction(service).execute(request);
+            new ProfilAstralSerialisation().appliquer(request, response);
             break;
 
         default:
