@@ -24,7 +24,7 @@ public class ProchaineConsultationAction extends Action {
         if (session != null && session.getAttribute("employe") != null) {
             connected = true;
             Employe e = (Employe) session.getAttribute("employe");
-            name = e.getNom();  // ou getPrenom() selon souhait
+            name = e.getNom();
             next = service.prochaineConsultation(e);
         }
         request.setAttribute("connected", connected);

@@ -51,4 +51,27 @@ document.addEventListener('DOMContentLoaded', () => {
   btnStats.addEventListener('click', () => {
     window.location.href = 'statistiques.html';
   });
+  
+  // 4) Déconnexion employé
+  btnLogoutEmp.addEventListener('click', () => {
+    fetch('ActionServlet?todo=deconnecterEmploye', {
+      headers: { 'Accept': 'application/json' }
+    })
+      .then(res => {
+        if (!res.ok) throw new Error(res.status);
+        return res.json();
+      })
+      .then(data => {
+        if (data.success) {
+          // redirection vers page d'accueil publique
+          window.location.href = '/connexionEmploye.html';
+        } else {
+          errorDiv.textContent = data.message || 'Échec de la déconnexion.';
+        }
+      })
+      .catch(err => {
+        console.error(err);
+        errorDiv.textContent = 'Erreur serveur lors de la déconnexion.';
+      });
+  });
 });

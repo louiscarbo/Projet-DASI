@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>Consultation demandée</title>
+</head>
+<body>
+
+  <header style="display:flex; justify-content:space-between; align-items:center;">
+    <a href="espaceEmploye.html" style="font-size:1.2em;">🏠 Espace Employe</a>
+  </header>
+
+  <main>
+    <h1>Consultation demandée !!!</h1>
+
+    <div style="display:flex; gap:2em;">
+
+      <!-- 1) Médium demandé -->
+      <section style="border:1px solid #000; border-radius:1em; padding:1em; flex:1;">
+        <h2>Médium demandé</h2>
+        <table>
+          <tr>
+            <th><label>Dénomination :</label></th>
+            <td><input type="text" id="medNom" readonly></td>
+          </tr>
+          <tr>
+            <th><label>Genre :</label></th>
+            <td><input type="text" id="medGenre" readonly></td>
+          </tr>
+          <tr>
+            <th><label>Présentation :</label></th>
+            <td><textarea id="medPresentation" rows="4" readonly></textarea></td>
+          </tr>
+        </table>
+      </section>
+
+      <!-- 2) Profil client + historique -->
+      <section style="border:1px solid #000; border-radius:1em; padding:1em; flex:1;">
+        <h2>Profil client</h2>
+        <table>
+          <tr>
+            <th>Nom :</th>
+            <td><input type="text" id="clientNom" readonly></td>
+            <th>Prénom :</th>
+            <td><input type="text" id="clientPrenom" readonly></td>
+          </tr>
+          <tr>
+            <th>Date de naissance :</th>
+            <td><input type="text" id="clientDate" readonly></td>
+            <th>Téléphone :</th>
+            <td><input type="text" id="clientTel" readonly></td>
+          </tr>
+          <tr>
+            <th colspan="4">Profil astral :</th>
+          </tr>
+          <tr>
+            <th>Signe du zodiaque :</th>
+            <td><input type="text" id="astroZodiaque" readonly></td>
+            <th>Couleur :</th>
+            <td><input type="text" id="astroCouleur" readonly></td>
+          </tr>
+          <tr>
+            <th>Signe chinois :</th>
+            <td><input type="text" id="astroChinois" readonly></td>
+            <th>Animal totem :</th>
+            <td><input type="text" id="astroAnimal" readonly></td>
+          </tr>
+        </table>
+
+        <h3>Historique des consultations :</h3>
+        <table border="1" id="historiqueTable" style="width:100%; text-align:left;">
+          <thead>
+            <tr>
+              <th>Date</th>
+              <th>Médium</th>
+              <th>Employé</th>
+            </tr>
+          </thead>
+          <tbody>
+            <!-- rempli par JS -->
+          </tbody>
+        </table>
+      </section>
+
+    </div>
+
+    <button id="btnValider" style="margin-top:1em;">Valider</button>
+    <button id="btnCommencer" style="margin-top:1em; display:none;">Commencer la consultation</button>
+
+    <div id="error" role="alert" style="color:red; margin-top:1em;"></div>
+  </main>
+
+  <script src="js/consultationDemandee.js"></script>
+</body>
+</html>

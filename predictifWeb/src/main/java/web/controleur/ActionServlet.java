@@ -13,17 +13,25 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import service.Service;
+import web.modele.AccepterConsultationAction;
 import web.modele.CheckSessionAction;
 import web.modele.ConnecterClientAction;
 import web.modele.ConnecterEmployeAction;
+import web.modele.ConsultationDemandeeAction;
 import web.modele.DeconnecterClientAction;
+import web.modele.DeconnecterEmployeAction;
+import web.modele.DemarrerConsultationAction;
 import web.modele.InscrireClientAction;
 import web.modele.ProchaineConsultationAction;
 import web.modele.ProfilAstralAction;
+import web.vue.AccepterConsultationSerialisation;
 import web.vue.CheckSessionSerialisation;
 import web.vue.ConnecterClientSerialisation;
 import web.vue.ConnecterEmployeSerialisation;
+import web.vue.ConsultationDemandeeSerialisation;
 import web.vue.DeconnecterClientSerialisation;
+import web.vue.DeconnecterEmployeSerialisation;
+import web.vue.DemarrerConsultationSerialisation;
 import web.vue.InscrireClientSerialisation;
 import web.vue.ProchaineConsultationSerialisation;
 import web.vue.ProfilAstralSerialisation;
@@ -49,6 +57,8 @@ protected void processRequest(HttpServletRequest request, HttpServletResponse re
     
     String todo = request.getParameter("todo");
     Service service = new Service();
+    
+    System.out.println("ActionServlet reçu todo=" + todo);
 
     switch (todo) {
         case "connecterClient":
@@ -84,6 +94,26 @@ protected void processRequest(HttpServletRequest request, HttpServletResponse re
         case "prochaineConsultation":
             new ProchaineConsultationAction(service).execute(request);
             new ProchaineConsultationSerialisation().appliquer(request, response);
+            break;
+            
+        case "consultationDemandee":
+            new ConsultationDemandeeAction(service).execute(request);
+            new ConsultationDemandeeSerialisation().appliquer(request, response);
+            break;
+            
+        case "deconnecterEmploye":
+            new DeconnecterEmployeAction(service).execute(request);
+            new DeconnecterEmployeSerialisation().appliquer(request, response);
+            break;
+            
+        case "accepterConsultation":
+            new AccepterConsultationAction(service).execute(request);
+            new AccepterConsultationSerialisation().appliquer(request, response);
+            break;
+
+        case "demarrerConsultation":
+            new DemarrerConsultationAction(service).execute(request);
+            new DemarrerConsultationSerialisation().appliquer(request, response);
             break;
 
         default:
