@@ -83,7 +83,7 @@ document.addEventListener('DOMContentLoaded', () => {
     if (!consultationId) return;
     fetch(`ActionServlet?todo=demarrerConsultation&id=${consultationId}`)
       .then(() => {
-        window.location.href = 'appelEncours.html';
+        window.location.href = `appelEnCours.html?id=${consultationId}`;
       })
       .catch(err => {
         console.error(err);

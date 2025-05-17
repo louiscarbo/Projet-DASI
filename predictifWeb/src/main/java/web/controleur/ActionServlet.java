@@ -21,9 +21,11 @@ import web.modele.ConsultationDemandeeAction;
 import web.modele.DeconnecterClientAction;
 import web.modele.DeconnecterEmployeAction;
 import web.modele.DemarrerConsultationAction;
+import web.modele.GenererPredictionAction;
 import web.modele.InscrireClientAction;
 import web.modele.ProchaineConsultationAction;
 import web.modele.ProfilAstralAction;
+import web.modele.TerminerConsultationAction;
 import web.vue.AccepterConsultationSerialisation;
 import web.vue.CheckSessionSerialisation;
 import web.vue.ConnecterClientSerialisation;
@@ -32,9 +34,11 @@ import web.vue.ConsultationDemandeeSerialisation;
 import web.vue.DeconnecterClientSerialisation;
 import web.vue.DeconnecterEmployeSerialisation;
 import web.vue.DemarrerConsultationSerialisation;
+import web.vue.GenererPredictionSerialisation;
 import web.vue.InscrireClientSerialisation;
 import web.vue.ProchaineConsultationSerialisation;
 import web.vue.ProfilAstralSerialisation;
+import web.vue.TerminerConsultationSerialisation;
 
 /**
  *
@@ -114,6 +118,15 @@ protected void processRequest(HttpServletRequest request, HttpServletResponse re
         case "demarrerConsultation":
             new DemarrerConsultationAction(service).execute(request);
             new DemarrerConsultationSerialisation().appliquer(request, response);
+            break;
+            
+        case "genererPrediction":
+            new GenererPredictionAction(service).execute(request);
+            new GenererPredictionSerialisation().appliquer(request, response);
+            break;
+        case "terminerConsultation":
+            new TerminerConsultationAction(service).execute(request);
+            new TerminerConsultationSerialisation().appliquer(request, response);
             break;
 
         default:
