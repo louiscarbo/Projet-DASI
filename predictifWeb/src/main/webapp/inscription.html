@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>Créez votre compte</title>
+</head>
+<body>
+
+  <h1>Créez votre compte</h1>
+
+  <table>
+    <tr>
+      <th><label for="nom">Nom&nbsp;:</label></th>
+      <td><input type="text" id="nom" placeholder="Curie"></td>
+    </tr>
+    <tr>
+      <th><label for="prenom">Prénom&nbsp;:</label></th>
+      <td><input type="text" id="prenom" placeholder="Marie"></td>
+    </tr>
+    <tr>
+      <th><label for="dateNaissance">Date de naissance&nbsp;:</label></th>
+      <td><input type="text" id="dateNaissance" placeholder="JJ / MM / AAAA"></td>
+    </tr>
+    <tr>
+      <th><label for="adresse">Adresse&nbsp;:</label></th>
+      <td><input type="text" id="adresse" placeholder="20 av Albert Einstein"></td>
+    </tr>
+    <tr>
+      <th><label for="codePostal">Code postal&nbsp;:</label></th>
+      <td><input type="text" id="codePostal" placeholder="69100"></td>
+    </tr>
+    <tr>
+      <th><label for="telephone">N° téléphone&nbsp;:</label></th>
+      <td><input type="text" id="telephone" placeholder="0667816303"></td>
+    </tr>
+    <tr>
+      <th><label for="mail">Adresse mail&nbsp;:</label></th>
+      <td><input type="text" id="mail" placeholder="marie.curie@gmail.com"></td>
+    </tr>
+    <tr>
+      <th><label for="mdp">Mot de passe&nbsp;:</label></th>
+      <td><input type="password" id="mdp" placeholder="••••••••••••••••"></td>
+    </tr>
+    <tr>
+      <th><label for="genre">Genre&nbsp;:</label></th>
+      <td>
+        <select id="genre">
+          <option value="">Sélectionnez</option>
+          <option value="F">F</option>
+          <option value="M">M</option>
+          <option value="Autre">Autre</option>
+        </select>
+      </td>
+    </tr>
+    <tr>
+      <td colspan="2" style="text-align:center">
+        <button id="btnInscrire">M’inscrire</button>
+      </td>
+    </tr>
+  </table>
+
+  <!-- Zone d’erreur -->
+  <div id="error" role="alert" style="color:red;"></div>
+
+  <!-- Lien vers connexion si déjà membre -->
+  <p>
+    Vous avez déjà un compte ?
+    <a href="connexion.html">Se connecter</a>
+  </p>
+
+  <!-- Inclusion du script externe -->
+  <script src="js/inscription.js"></script>
+</body>
+</html>

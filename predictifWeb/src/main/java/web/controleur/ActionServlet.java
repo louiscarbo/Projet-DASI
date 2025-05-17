@@ -7,16 +7,16 @@ package web.controleur;
 
 import dao.JpaUtil;
 import java.io.IOException;
-import java.io.PrintWriter;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import modele.Client;
 import service.Service;
 import web.modele.ConnecterClientAction;
+import web.modele.InscrireClientAction;
 import web.vue.ConnecterClientSerialisation;
+import web.vue.InscrireClientSerialisation;
 
 /**
  *
@@ -46,6 +46,11 @@ public class ActionServlet extends HttpServlet {
             case "connecterClient": {
                 new ConnecterClientAction(service).execute(request);
                 new ConnecterClientSerialisation().appliquer(request, response);
+                break;
+            }
+            case "inscrireClient": {
+                new InscrireClientAction(service).execute(request);
+                new InscrireClientSerialisation().appliquer(request, response);
                 break;
             }
             default: {
