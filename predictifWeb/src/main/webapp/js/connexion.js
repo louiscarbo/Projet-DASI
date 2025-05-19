@@ -14,7 +14,7 @@ document.addEventListener('DOMContentLoaded', () => {
       return;
     }
 
-    // 2. Construction de l’URL (GET) ou préparation du POST
+    // 2. Construction de l’URL (GET)
     const params = new URLSearchParams({
       todo: 'connecterClient',
       mail: mail,

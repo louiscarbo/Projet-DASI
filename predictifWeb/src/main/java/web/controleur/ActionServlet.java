@@ -15,6 +15,7 @@ import javax.servlet.http.HttpServletResponse;
 import service.Service;
 import web.modele.AccepterConsultationAction;
 import web.modele.CheckSessionAction;
+import web.modele.ChercherMediumAction;
 import web.modele.ConnecterClientAction;
 import web.modele.ConnecterEmployeAction;
 import web.modele.ConsultationDemandeeAction;
@@ -25,9 +26,11 @@ import web.modele.GenererPredictionAction;
 import web.modele.InscrireClientAction;
 import web.modele.ProchaineConsultationAction;
 import web.modele.ProfilAstralAction;
+import web.modele.ReserverConsultationAction;
 import web.modele.TerminerConsultationAction;
 import web.vue.AccepterConsultationSerialisation;
 import web.vue.CheckSessionSerialisation;
+import web.vue.ChercherMediumSerialisation;
 import web.vue.ConnecterClientSerialisation;
 import web.vue.ConnecterEmployeSerialisation;
 import web.vue.ConsultationDemandeeSerialisation;
@@ -38,6 +41,7 @@ import web.vue.GenererPredictionSerialisation;
 import web.vue.InscrireClientSerialisation;
 import web.vue.ProchaineConsultationSerialisation;
 import web.vue.ProfilAstralSerialisation;
+import web.vue.ReserverConsultationSerialisation;
 import web.vue.TerminerConsultationSerialisation;
 
 /**
@@ -127,6 +131,16 @@ protected void processRequest(HttpServletRequest request, HttpServletResponse re
         case "terminerConsultation":
             new TerminerConsultationAction(service).execute(request);
             new TerminerConsultationSerialisation().appliquer(request, response);
+            break;
+            
+        case "chercherMediums":
+            new ChercherMediumAction(service).execute(request);
+            new ChercherMediumSerialisation().appliquer(request, response);
+            break;
+            
+        case "reserverConsultation":
+            new ReserverConsultationAction(service).execute(request);
+            new ReserverConsultationSerialisation().appliquer(request, response);
             break;
 
         default:

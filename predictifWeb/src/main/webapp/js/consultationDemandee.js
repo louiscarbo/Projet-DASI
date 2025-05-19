@@ -21,6 +21,8 @@ document.addEventListener('DOMContentLoaded', () => {
       document.getElementById('medNom').value          = data.medium.nom;
       document.getElementById('medGenre').value        = data.medium.genre;
       document.getElementById('medPresentation').value = data.medium.presentation;
+      document.getElementById('medType').value         = data.medium.type;
+
 
       // Client
       document.getElementById('clientNom').value       = data.client.nom;

@@ -36,8 +36,6 @@ public class Medium {
     public Medium() {
     }
     
-    
-
     public Medium(String nom, String genre, String presentation) {
         this.nom = nom;
         this.genre = genre;

@@ -9,10 +9,13 @@ import java.io.PrintWriter;
 import java.text.SimpleDateFormat;
 import java.util.List;
 import javax.servlet.http.*;
+import modele.Astrologue;
+import modele.Cartomancien;
 import modele.Consultation;
 import modele.Medium;
 import modele.Client;
 import modele.ProfilAstral;
+import modele.Spirite;
 
 /**
  * Sérialisation JSON de la consultation demandée.
@@ -44,6 +47,15 @@ public class ConsultationDemandeeSerialisation extends Serialisation {
                 jm.addProperty("nom", med.getNom());
                 jm.addProperty("genre", med.getGenre());
                 jm.addProperty("presentation", med.getPresentation());
+                String type = "Medium";
+                if (med instanceof Spirite) {
+                    type = "Spirite";
+                } else if (med instanceof Cartomancien) {
+                    type = "Cartomancien";
+                } else if (med instanceof Astrologue) {
+                    type = "Astrologue";
+                }
+                jm.addProperty("type", type);
                 root.add("medium", jm);
 
                 // client

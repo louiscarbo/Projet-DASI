@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="fr">
+    <head>
+        <meta charset="UTF-8">
+        <title>Choisir un médium </title>
+    </head>
+
+    <body>
+        
+        <button id="btnMenu" style="display:none">☰ Menu</button>
+
+        <h1>Choisir un médium</h1>
+
+        <table>
+
+            <tr>
+                <th><label for="nomMedium">Nom du Médium&nbsp;:</label></th>
+                <td><input type="text" id="nomMedium" placeholder="Esmeralda"></td>
+            </tr>
+
+            <tr>
+                <td colspan="2" style="text-align:center">
+                    <button id="btnFiltrer">Filtrer</button>
+                </td>
+            </tr>
+        </table>
+
+        <table>
+            <thead>
+            <tr>
+                <th>Type</th>
+                <th>Nom</th>  
+                <th>Genre</th>
+                <th>Réserver</th>
+            </tr>
+            </thead>
+
+            <tbody id="tableContent"></tbody>
+
+        </table>
+
+        <aside id="filterPanel" style=" position:fixed; top:0; right:0;
+                           width:250px; height:100%; background:#fff;
+                           box-shadow:2px 0 5px rgba(0,0,0,.3);
+                           padding:1em; overflow-y:auto;">
+            
+            <button id="btnCloseFilter">X</button>
+
+            <h2>Filtres</h2>
+
+            <fieldset>
+                <legend>Type :</legend>
+                <label><input id="astro" type="checkbox" name="type" value="Astrologue" checked> Astrologue</label>
+                <label><input id="carto" type="checkbox" name="type" value="Cartomancien" checked> Cartomancien</label>
+                <label><input id="spirite" type="checkbox" name="type" value="Spirite" checked> Spirite</label>
+            </fieldset>
+            
+            <fieldset>
+                <legend>Genre :</legend>
+                <label><input type="radio" name="genre" value="H"> Homme</label>
+                <label><input type="radio" name="genre" value="F" checked> Femme</label>
+            </fieldset>
+            
+            <button id="btnApplyFilters">Voir les résultats</button>
+
+
+            <!-- Zone d’erreur -->
+            <div id="error" role="alert" style="color:red;"></div>
+
+            <!-- Inclusion du script externe -->
+            <script src="js/choixMedium.js"></script>
+            <script src="js/menu.js"></script>
+
+    </body>
+</html>
