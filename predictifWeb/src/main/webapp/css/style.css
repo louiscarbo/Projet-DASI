@@ -31,6 +31,10 @@ body, input, button {
     color: var(--text-color);
 }
 
+h1 {
+    font-family: var(--font-heading);
+}
+
 .bg-gradient-in {
     background: var(--gradient-in);
 }
@@ -56,6 +60,10 @@ body, input, button {
 .gradient-body {
     background: linear-gradient(to bottom, var(--bg-start), var(--bg-end));
     min-height: 100vh;
+    max-width : 800px;
+    margin : auto;
+    padding : 2rem;
+    text-align : left;
 }
 
 .centered-body {
@@ -67,7 +75,6 @@ body, input, button {
 /* COMPOSANT : Bouton principal */
 .btn-primary {
     display: inline-block;
-    margin: 1.5rem auto;
     padding: 0.8rem 2rem;
     font-size: 1.25rem;
     font-family: var(--font-serif);
@@ -86,7 +93,6 @@ body, input, button {
 /* COMPOSANT : Bouton Secondaire */
 .btn-secondary {
     display: inline-block;
-    margin: 1.5rem auto;
     padding: 0.8rem 2rem;
     font-size: 1.25rem;
     font-family: var(--font-serif);

@@ -1,0 +1,144 @@
+nav {
+    display: flex;
+    margin: 0px;
+}
+
+section {
+    margin: 2rem 0rem;
+}
+
+#btnMenu {
+    margin: 0px;
+}
+
+#btnFiltrer {
+    margin: 0px 0px 0px auto;
+}
+
+/* 1) Container */
+#filterPanel {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 250px;
+  height: 100vh;
+  border: 5px #880e4f;
+  background: rgba(221, 190, 218, 1);
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  font-family: var(--font-sans);
+  z-index: 999;
+}
+
+/* 2) Close button */
+#btnCloseFilter {
+  align-self: flex-end;
+  background: none;
+  border: none;
+  font-size: 1.25rem;
+  cursor: pointer;
+  margin-bottom: 1rem;
+}
+
+/* 3) Heading */
+#filterPanel h2 {
+  font-family: var(--font-heading);
+  text-align: center;
+  margin: 0 0 1rem;
+}
+
+/* 4) Fieldsets */
+#filterPanel fieldset {
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  padding: 1rem;
+  margin-bottom: 1rem;
+}
+#filterPanel legend {
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+}
+
+/* 5) Labels & inputs */
+#filterPanel label {
+  display: block;
+  margin-bottom: 0.5rem;
+  cursor: pointer;
+}
+#filterPanel input[type="checkbox"],
+#filterPanel input[type="radio"] {
+  margin-right: 0.5rem;
+  vertical-align: middle;
+}
+
+/* 7) Error box inside panel */
+#filterPanel #error:empty {
+  display: none;
+}
+#filterPanel #error:not(:empty) {
+  margin-top: 1rem;
+  font-size: 0.9rem;
+  color: #880e4f;
+  background-color: rgba(255, 0, 0, 0.1);
+  border: 2px solid #880e4f;
+  border-radius: 8px;
+  padding: 0.5rem 1rem;
+}
+
+section > table:first-of-type {
+  width: 100%;
+  max-width: var(--content-width, 800px);
+  margin: 1rem auto;
+  border-collapse: collapse;
+}
+section > table:first-of-type th,
+section > table:first-of-type td {
+  vertical-align: middle;
+}
+section > table:first-of-type td input {
+  width: 100%;
+  padding: 0.5rem 1rem;
+  font-size: 1rem;
+  border: 2px solid var(--border-color);
+  border-radius: 30px;
+  background: var(--gradient-in);
+  outline: none;
+  color: #000;
+}
+
+/* ——— Results table ——— */
+section > table:nth-of-type(2) {
+  width: 100%;
+  max-width: var(--content-width, 800px);
+  margin: 2rem auto;
+  border-collapse: collapse;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+/* Header row */
+section > table:nth-of-type(2) thead {
+  background: var(--gradient-in);
+}
+section > table:nth-of-type(2) th {
+  padding: 0.75rem 1rem;
+  text-align: left;
+  font-family: var(--font-heading);
+  font-size: 1rem;
+  color: #333;
+}
+
+/* Body rows */
+section > table:nth-of-type(2) td {
+  padding: 0.75rem 1rem;
+  background: #fff;
+  border-top: 1px solid #eee;
+  color: #333;
+}
+section > table:nth-of-type(2) tbody tr:nth-child(odd) td {
+  background: #f9f9f9;
+}
+section > table:nth-of-type(2) tbody tr:hover td {
+  background: #f1f1f1;
+}
