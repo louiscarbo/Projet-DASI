@@ -53,7 +53,7 @@ document.addEventListener('DOMContentLoaded', () => {
           </td>`;
         tr.querySelector('button.btnDetail')
           .addEventListener('click', () => {
-            window.location.href = `consultationDetail.html?id=${c.id}`;
+            window.location.href = `detailConsultation.html?id=${c.id}`;
           });
         tbody.appendChild(tr);
       });

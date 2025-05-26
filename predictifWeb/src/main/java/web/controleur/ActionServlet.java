@@ -27,6 +27,7 @@ import web.modele.ChercherMediumAction;
 import web.modele.ConnecterClientAction;
 import web.modele.ConnecterEmployeAction;
 import web.modele.ConsultationDemandeeAction;
+import web.modele.ConsulterDetailsConsultationAction;
 import web.modele.DeconnecterClientAction;
 import web.modele.DeconnecterEmployeAction;
 import web.modele.DemarrerConsultationAction;
@@ -43,6 +44,7 @@ import web.vue.ChercherMediumSerialisation;
 import web.vue.ConnecterClientSerialisation;
 import web.vue.ConnecterEmployeSerialisation;
 import web.vue.ConsultationDemandeeSerialisation;
+import web.vue.ConsulterDetailsConsultationSerialisation;
 import web.vue.DeconnecterClientSerialisation;
 import web.vue.DeconnecterEmployeSerialisation;
 import web.vue.DemarrerConsultationSerialisation;
@@ -155,6 +157,11 @@ protected void processRequest(HttpServletRequest request, HttpServletResponse re
         case "afficherHistorique":
             new AfficherHistoriqueAction(service).execute(request);
             new AfficherHistoriqueSerialisation().appliquer(request, response);
+            break;
+            
+        case "consulterDetailsConsultation":
+            new ConsulterDetailsConsultationAction(service).execute(request);
+            new ConsulterDetailsConsultationSerialisation().appliquer(request, response);
             break;
 
         default:
