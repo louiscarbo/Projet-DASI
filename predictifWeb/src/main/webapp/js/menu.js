@@ -13,10 +13,28 @@ document.addEventListener('DOMContentLoaded', () => {
       const sideMenu   = document.getElementById('sideMenu');
       const logoutLink = document.getElementById('logoutLink');
       btnMenu.style.display = 'inline-block';
-      btnMenu.addEventListener('click', () => {
+      
+      /*btnMenu.addEventListener('click', () => {
         sideMenu.style.display =
           sideMenu.style.display === 'block' ? 'none' : 'block';
       });
+      */
+     
+     const overlay = document.getElementById('menuOverlay');
+     
+     function openMenu (){
+         sideMenu.style.display = 'block';
+         overlay.style.display = 'block';
+     }
+     
+    function closeMenu (){
+         sideMenu.style.display = 'none';
+         overlay.style.display = 'none';
+     }
+     
+    btnMenu.addEventListener('click', openMenu);
+    overlay.addEventListener('click', closeMenu);
+
       logoutLink.addEventListener('click', e => {
         e.preventDefault();
         fetch('ActionServlet?todo=deconnecter')
