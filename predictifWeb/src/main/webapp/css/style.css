@@ -1,16 +1,76 @@
+/* 1) Google Fonts */
 @import url('https://fonts.googleapis.com/css2?family=Corinthia:wght@400;700&family=Crimson+Text:ital,wght@0,400;0,600;0,700;1,400;1,600;1,700&display=swap');
 
+/* 2) Variables : polices, couleurs, dégradés */
 :root {
+  /* typographies */
+  --font-serif:    'Crimson Text', serif;
+  --font-cursive:  'Corinthia', cursive;
+  --font-sans:     Arial, sans-serif;
+
+  /* dégradés réutilisables */
+  --gradient-in:   linear-gradient(135deg, rgba(226,171,221,1) 0%, rgba(189,231,251,1) 100%);
+  --gradient-btn:  linear-gradient(90deg,  rgba(242,164, 59,1) 0%, rgba(249,221, 74,1) 100%);
+  --bg-start:      rgba(213,253,254,1);
+  --bg-end:        rgba(249,221,238,1);
+
+  /* couleurs */
+  --border-color:  #333;
+  --text-color:    #333;
   --font-serif: 'Crimson Text', serif;
   --font-cursive: 'Corinthia', cursive;
   --font-sans:    Arial, sans-serif;
   --font-heading  : var(--font-serif);
 }
 
-h1, h2, h3 {
-  font-family: var(--font-heading);
+/* 3) Reset de base */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
+/* 4) Polices de base */
 body, input, button {
   font-family: var(--font-sans);
+  color: var(--text-color);
+}
+
+/* 5) Utilitaires : appliquer un dégradé de fond */
+.bg-gradient-in {
+  background: var(--gradient-in);
+}
+.bg-gradient-btn {
+  background: var(--gradient-btn);
+}
+
+/* 6) Composant : champs de formulaire arrondis */
+.form-input {
+  width: 260px;
+  max-width: 80vw;
+  padding: 0.6rem 1rem;
+  font-size: 1rem;
+  border: 2px solid var(--border-color);
+  border-radius: 30px;
+  outline: none;
+  color: #000;
+  background: var(--gradient-in);
+}
+
+/* 7) Composant : bouton principal */
+.btn-primary {
+  display: inline-block;
+  margin: 1.5rem auto;
+  padding: 0.8rem 2rem;
+  font-size: 1.25rem;
+  font-family: var(--font-sans);
+  color: #fff;
+  background: var(--gradient-btn);
+  border: 2px solid var(--border-color);
+  border-radius: 30px;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+.btn-primary:hover {
+  transform: scale(1.05);
 }

@@ -2,6 +2,8 @@
 <html lang="fr">
 <head>
   <meta charset="UTF-8">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/connexion.css">
   <title>Connexion</title>
 </head><body>
 
@@ -10,25 +12,25 @@
   <table>
     <tr>
       <th><label for="mail">Mail&nbsp;:</label></th>
-      <td><input type="text" id="mail" placeholder="marie.curie@gmail.com"></td>
+      <td><input type="text" id="mail" placeholder="marie.curie@gmail.com" class="form-input"></td>
     </tr>
     <tr>
       <th><label for="mdp">Mot de passe&nbsp;:</label></th>
-      <td><input type="password" id="mdp" placeholder="••••••••••••••••"></td>
+      <td><input type="password" id="mdp" placeholder="••••••••••••••••" class="form-input"></td>
     </tr>
     <tr>
       <td colspan="2" style="text-align:center">
-        <button id="btnValider">Valider</button>
+        <button id="btnValider" class="btn-primary">Valider</button>
       </td>
     </tr>
   </table>
 
   <p>
-    Vous n’avez pas de compte&nbsp;?
+    Vous n’avez pas de compte&nbsp;?<br>
     <a href="inscription.html">Inscrivez-vous maintenant !</a>
   </p>
   <p>
-    Vous êtes employé ?
+    Vous êtes employé ? <br>
     <a href="connexionEmploye.html">Connectez-vous ici !</a>
   </p>
   <p>
