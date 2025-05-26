@@ -1,11 +1,12 @@
 /* 1) Google Fonts */
-@import url('https://fonts.googleapis.com/css2?family=Corinthia:wght@400;700&family=Crimson+Text:ital,wght@0,400;0,600;0,700;1,400;1,600;1,700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Berkshire+Swash&family=Corinthia:wght@400;700&family=Forum&display=swap');
 
 /* 2) Variables : polices, couleurs, dégradés */
 :root {
   /* typographies */
-  --font-serif:    'Crimson Text', serif;
+  --font-serif:    'Forum', serif;
   --font-cursive:  'Corinthia', cursive;
+  --font-heading:  'Berkshire Swash', cursive;
   --font-sans:     Arial, sans-serif;
 
   /* dégradés réutilisables */
@@ -45,12 +46,22 @@ body, input, button {
   width: 260px;
   max-width: 80vw;
   padding: 0.6rem 1rem;
-  font-size: 1rem;
+  font-size: 1.1rem;
+  font-family: var(--font-serif);
   border: 2px solid var(--border-color);
   border-radius: 30px;
   outline: none;
   color: #000;
   background: var(--gradient-in);
+}
+
+/* Dégradé bleu-rose global */
+.gradient-body {
+  background: linear-gradient(to bottom, var(--bg-start), var(--bg-end));
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 100vh;
 }
 
 /* 7) Composant : bouton principal */
@@ -59,9 +70,10 @@ body, input, button {
   margin: 1.5rem auto;
   padding: 0.8rem 2rem;
   font-size: 1.25rem;
-  font-family: var(--font-sans);
-  color: #fff;
-  background: var(--gradient-btn);
+  font-family: var(--font-serif);
+  font-weight: bold;
+  color: var(--border-color);
+  background: linear-gradient(90deg,  rgba(242,164, 59,1) 0%, rgba(249,221, 74,1) 100%);
   border: 2px solid var(--border-color);
   border-radius: 30px;
   cursor: pointer;
@@ -69,4 +81,37 @@ body, input, button {
 }
 .btn-primary:hover {
   transform: scale(1.05);
+}
+
+/* 8) Composant : bouton secondaire */
+.btn-secondary {
+  display: inline-block;
+  margin: 1.5rem auto;
+  padding: 0.8rem 2rem;
+  font-size: 1.25rem;
+  font-family: var(--font-serif);
+  font-weight: bold;
+  color: var(--border-color);
+  background: linear-gradient(90deg, #8c52ff 0%, #5ce1e6 100%);
+  border: 2px solid var(--border-color);
+  border-radius: 30px;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+.btn-primary:hover {
+  transform: scale(1.05);
+}
+
+/* Zone d'erreur */
+#error:empty {
+  display: none;
+}
+#error:not(:empty) {
+  margin-top: 1rem;
+  font-size: 0.9rem;
+  color: #880e4f;
+  background-color: rgba(255, 0, 0, 0.1);
+  border: 2px solid #880e4f;
+  border-radius: 8px;
+  padding: 0.5rem 1rem;
 }
