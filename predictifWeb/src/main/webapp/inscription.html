@@ -2,49 +2,52 @@
 <html lang="fr">
 <head>
   <meta charset="UTF-8">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/inscription.css">
   <title>Créez votre compte</title>
 </head>
-<body>
+
+<body class="gradient-body">
 
   <h1>Créez votre compte</h1>
 
   <table>
     <tr>
       <th><label for="nom">Nom&nbsp;:</label></th>
-      <td><input type="text" id="nom" placeholder="Curie"></td>
+      <td><input type="text" id="nom" placeholder="Curie" class="form-input"></td>
     </tr>
     <tr>
       <th><label for="prenom">Prénom&nbsp;:</label></th>
-      <td><input type="text" id="prenom" placeholder="Marie"></td>
+      <td><input type="text" id="prenom" placeholder="Marie" class="form-input"></td>
     </tr>
     <tr>
       <th><label for="dateNaissance">Date de naissance&nbsp;:</label></th>
-      <td><input type="text" id="dateNaissance" placeholder="JJ / MM / AAAA"></td>
+      <td><input type="text" id="dateNaissance" placeholder="JJ / MM / AAAA" class="form-input"></td>
     </tr>
     <tr>
       <th><label for="adresse">Adresse&nbsp;:</label></th>
-      <td><input type="text" id="adresse" placeholder="20 av Albert Einstein"></td>
+      <td><input type="text" id="adresse" placeholder="20 av Albert Einstein" class="form-input"></td>
     </tr>
     <tr>
       <th><label for="codePostal">Code postal&nbsp;:</label></th>
-      <td><input type="text" id="codePostal" placeholder="69100"></td>
+      <td><input type="text" id="codePostal" placeholder="69100" class="form-input"></td>
     </tr>
     <tr>
       <th><label for="telephone">N° téléphone&nbsp;:</label></th>
-      <td><input type="text" id="telephone" placeholder="0667816303"></td>
+      <td><input type="text" id="telephone" placeholder="0667816303" class="form-input"></td>
     </tr>
     <tr>
       <th><label for="mail">Adresse mail&nbsp;:</label></th>
-      <td><input type="text" id="mail" placeholder="marie.curie@gmail.com"></td>
+      <td><input type="text" id="mail" placeholder="marie.curie@gmail.com" class="form-input"></td>
     </tr>
     <tr>
       <th><label for="mdp">Mot de passe&nbsp;:</label></th>
-      <td><input type="password" id="mdp" placeholder="••••••••••••••••"></td>
+      <td><input type="password" id="mdp" placeholder="••••••••••••••••" class="form-input"></td>
     </tr>
     <tr>
       <th><label for="genre">Genre&nbsp;:</label></th>
       <td>
-        <select id="genre">
+        <select id="genre" class="form-input">
           <option value="">Sélectionnez</option>
           <option value="F">F</option>
           <option value="M">M</option>
@@ -54,13 +57,13 @@
     </tr>
     <tr>
       <td colspan="2" style="text-align:center">
-        <button id="btnInscrire">M’inscrire</button>
+        <button id="btnInscrire" class="btn-primary">M’inscrire</button>
       </td>
     </tr>
   </table>
 
   <!-- Zone d’erreur -->
-  <div id="error" role="alert" style="color:red;"></div>
+  <div id="error" role="alert"></div>
 
   <!-- Lien vers connexion si déjà membre -->
   <p>
