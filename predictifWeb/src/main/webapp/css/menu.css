@@ -1,0 +1,39 @@
+#sideMenu {
+    display : none;
+    display:none; position:fixed; top:0; left:0;
+    width:250px; height:100%; background:linear-gradient(to bottom right,#fffafc,#d6d6ff);
+    box-shadow:2px 0 10px rgba(0,0,0,.2);
+    padding:1.5em 1em; overflow-y:auto;
+    z-index : 1001;
+    font-family : 'Segoe UI', sans-serif;
+}
+
+#sideMenu ul {
+    list-style: none;
+    padding:0;
+    margin:0;
+}
+
+#sideMenu li{
+    margin : 1em 0;
+}
+
+#sideMenu a {
+    display : block;
+    text-decoration: none;
+    color : 0x333;
+    font-size : 1.1em;
+    font-weight : 500;
+    transition: color 0.3s ease, transform 0.2s ease;
+}
+#menuOverlay {
+    position:fixed; top:0; left:0;
+    width:100vw; height:100vh; background-color:rgba(0,0,0,0.3);
+    z-index : 1000; display : none;
+}
+
+#logoutLink {
+    color : #c62828
+}
+
+
