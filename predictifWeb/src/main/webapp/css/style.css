@@ -4,6 +4,7 @@
   --font-serif: 'Crimson Text', serif;
   --font-cursive: 'Corinthia', cursive;
   --font-sans:    Arial, sans-serif;
+  --font-heading  : var(--font-serif);
 }
 
 h1, h2, h3 {
