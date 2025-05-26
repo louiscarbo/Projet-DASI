@@ -35,8 +35,7 @@ public class MediumDAO {
         TypedQuery query = JpaUtil.obtenirContextePersistance().createQuery(s, Medium.class);
         return query.getResultList();
     }
-    
-    
+
     public static List<MediumStats> findNbConsultationsMedium() {
 
         String s = "SELECT c, c.nbConsultations FROM Medium c ORDER BY c.nbConsultations DESC";
@@ -54,78 +53,78 @@ public class MediumDAO {
         return stats;
     }
 
-
-    public static List<Medium> find(boolean Spirite, boolean Astrologue, boolean Carto, String nomMedium, String genre) {
+    public static List<Medium> find(
+            boolean Spirite,
+            boolean Astrologue,
+            boolean Carto,
+            String nomMedium,
+            String genre
+    ) {
         String s = "SELECT m FROM Medium m";
         boolean where = false;
-        if (Spirite || Astrologue || Carto) {
-            s += " WHERE TYPE(m) IN ("; //à modifier : on accède aux attributs, pas aux tables
-            where = true;
 
+        if (Spirite || Astrologue || Carto) {
+            s += " WHERE TYPE(m) IN (";
+            where = true;
+            boolean first = true;
             if (Spirite) {
-                s = s + ":spirite";
-                if (Astrologue || Carto) {
+                s += ":spirite";
+                first = false;
+            }
+            if (Astrologue) {
+                if (!first) {
                     s += ", ";
                 }
-            }
-
-            if (Astrologue) {
-                s = s + ":astro";
-                if (Carto) {
-                    s = s + ", ";
-
-                }
-
+                s += ":astro";
+                first = false;
             }
             if (Carto) {
-                s = s + ":carto";
-
+                if (!first) {
+                    s += ", ";
+                }
+                s += ":carto";
             }
-
             s += ")";
-
-        }
-        if (!"".equals(nomMedium)) {
-            if (!where) {
-                s += " WHERE ";
-                where = true;
-            } else {
-                s += " AND ";
-            }
-            s += ("m.nom = '" + nomMedium + "'");
         }
 
-        if (!"".equals(genre)) {
-            if (!where) {
-                s += " WHERE ";
-            } else {
-                s += " AND ";
-            }
-            s += (" m.genre = '" + genre + "'");
+        if (nomMedium != null && !nomMedium.isEmpty()) {
+            s += (where ? " AND " : " WHERE ");
+            s += "LOWER(m.nom) LIKE :nomMedium";
+            where = true;
         }
 
-        s += (" ORDER BY m.nbConsultations desc");
+        if (genre != null && !genre.isEmpty()) {
+            s += (where ? " AND " : " WHERE ");
+            s += "m.genre = :genre";
+        }
 
-        TypedQuery query = JpaUtil.obtenirContextePersistance().createQuery(s, Medium.class);
-        if (Spirite)
-        {
+        s += " ORDER BY m.nbConsultations DESC";
+
+        TypedQuery<Medium> query
+                = JpaUtil.obtenirContextePersistance().createQuery(s, Medium.class);
+
+        if (Spirite) {
             query.setParameter("spirite", Spirite.class);
         }
-        if (Astrologue)
-        {
+        if (Astrologue) {
             query.setParameter("astro", Astrologue.class);
         }
-        if (Carto)
-        {
+        if (Carto) {
             query.setParameter("carto", Cartomancien.class);
         }
+        if (nomMedium != null && !nomMedium.isEmpty()) {
+            query.setParameter("nomMedium", "%" + nomMedium.toLowerCase() + "%");
+        }
+        if (genre != null && !genre.isEmpty()) {
+            query.setParameter("genre", genre);
+        }
+
         return query.getResultList();
-    
     }
-    
+
     public static Medium findById(Long id) { //faire find direct
         String s = "SELECT c FROM Medium c WHERE c.id = :id";
-        TypedQuery query = JpaUtil.obtenirContextePersistance().createQuery(s,Medium.class);
+        TypedQuery query = JpaUtil.obtenirContextePersistance().createQuery(s, Medium.class);
         query.setParameter("id", id);
         return (Medium) query.getResultList().get(0);
     }
