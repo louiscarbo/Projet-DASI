@@ -35,6 +35,10 @@ header {
   text-align: center;
 }
 
+#btnClose:hover {
+  transform: rotate(10deg) scale(1.1);
+}
+
 /* Main */
 main {
   flex: 1;
@@ -55,6 +59,7 @@ main {
 /* Container des cartes */
 #predictions {
   display: flex;
+  position: relative;
   justify-content: center;
   gap: 1.5rem;
 }
@@ -78,13 +83,49 @@ main {
   font-family: var(--font-serif);
   font-size: 1rem;
   line-height: 1.4;
-  text-align: justify;
+  text-align: center;
   padding: 0.5rem;
   background: rgba(255,255,255,0.7);
 /*  border: 3px solid rgba(45,67,119,0.8);*/
   border-radius: 0.75rem;
   color: #000;
   overflow-y: auto;
+}
+
+/* On crée un “contexte 3D” pour un rendu plus naturel (optionnel) */
+#predictions {
+  perspective: 800px;
+}
+
+/* Toutes les cartes */
+#predictions > div {
+  position: relative;              /* pour pouvoir jouer sur z-index */
+  transform-origin: bottom center; /* pivot au bas de la carte */
+  transition: transform 0.3s ease;
+}
+
+/* Carte Amour à gauche, légèrement inclinée */
+#cardAmour {
+  transform: translateX(60px) rotate(-10deg) translateX(-20px);
+  z-index: 1;
+}
+
+/* Carte Santé au centre, droite devant */
+#cardSante {
+  transform: rotate(0deg) scale(1.05);
+  z-index: 2; /* doit être au-dessus des autres */
+}
+
+/* Carte Travail à droite, inclinée en miroir*/
+#cardTravail {
+  transform: translateX(-60px) rotate(10deg) translateX(20px);
+  z-index: 1;
+}
+
+/* (Optionnel) Au survol on redresse légèrement la carte */
+#predictions > div:hover {
+  transform: rotate(0deg) scale(1.1);
+  z-index: 3;
 }
 
 /* Zone d’erreur */
