@@ -7,13 +7,21 @@ package web.controleur;
 
 import dao.JpaUtil;
 import java.io.IOException;
+import java.text.ParseException;
+import java.util.List;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import modele.Client;
+import modele.Consultation;
+import modele.Employe;
+import modele.Medium;
+import modele.Prediction;
 import service.Service;
 import web.modele.AccepterConsultationAction;
+import web.modele.AfficherHistoriqueAction;
 import web.modele.CheckSessionAction;
 import web.modele.ChercherMediumAction;
 import web.modele.ConnecterClientAction;
@@ -29,6 +37,7 @@ import web.modele.ProfilAstralAction;
 import web.modele.ReserverConsultationAction;
 import web.modele.TerminerConsultationAction;
 import web.vue.AccepterConsultationSerialisation;
+import web.vue.AfficherHistoriqueSerialisation;
 import web.vue.CheckSessionSerialisation;
 import web.vue.ChercherMediumSerialisation;
 import web.vue.ConnecterClientSerialisation;
@@ -142,6 +151,11 @@ protected void processRequest(HttpServletRequest request, HttpServletResponse re
             new ReserverConsultationAction(service).execute(request);
             new ReserverConsultationSerialisation().appliquer(request, response);
             break;
+            
+        case "afficherHistorique":
+            new AfficherHistoriqueAction(service).execute(request);
+            new AfficherHistoriqueSerialisation().appliquer(request, response);
+            break;
 
         default:
             response.sendError(HttpServletResponse.SC_BAD_REQUEST, "Action inconnue");
@@ -153,6 +167,152 @@ protected void processRequest(HttpServletRequest request, HttpServletResponse re
     public void init() throws ServletException {
         super.init();
         JpaUtil.creerFabriquePersistance();
+        
+        try {
+            testerInscrireClients();
+            Service service = new Service();
+            service.initMediums();
+            service.initEmployes();
+            scenarioClient();
+            injecterConsultationTest();
+        } catch(Exception exc) {
+            System.out.println("Erreur lors de l'initialisation");
+            exc.printStackTrace();
+        }
+    }
+    
+    private static void injecterConsultationTest() throws ParseException, IOException {
+        Service service = new Service();
+
+        // 1) Créer ou retrouver un client de test
+        Client testClient = new Client(
+            "Dupont", "Jean",
+            "01/01/1990",
+            "123 rue Exemple",
+            "0123456789",
+            "jean.dupont@example.com",
+            "motdepasse"
+        );
+        Service.inscrireClient(testClient);
+
+        // 2) Récupérer un médium pour la consultation
+        List<Medium> mediums = service.rechercherListeMedium(true, true, true, "", "");
+        if (mediums.isEmpty()) {
+            System.err.println("Aucun médium disponible pour test.");
+            return;
+        }
+        Medium med = mediums.get(0);
+
+        // 3) Générer la consultation « ATTENTE »
+        Consultation c = service.trouverConsultation(testClient, med);
+        if (c == null) {
+            System.err.println("Echec de création de la consultation test.");
+        } else {
+            System.out.println("✔ Consultation test injectée en base, état=" + c.getEtat()
+                + ", id=" + c.getId());
+        }
+    }
+    
+    private static void scenarioClient() throws ParseException, IOException
+    {
+        Service service = new Service();
+        
+        
+        Client c1 = new Client("Levino", "Nicolas", "13/04/2004", "Parque Marbella 23, Huixquilucan de Degollado", "0943785620", "levinonicolas@gmail.com", "jefaisdelacrypto");
+        service.inscrireClient(c1);
+        
+        printlnConsoleIHM("(IHM client) Inscription Client C1 : "+c1);
+        
+        
+        Client c = service.connecterClient("levinonicolas@gmail.com", "jefaisdelacrypt");
+        printlnConsoleIHM("(IHM client) client connecté : "+c);
+        
+        c = service.connecterClient("levinonicolas@gmail.com", "jefaisdelacrypto");
+        printlnConsoleIHM("(IHM client) client connecté : "+c);
+        
+        printlnConsoleIHM("(IHM client) profil astral : ");
+        printlnConsoleIHM(c.getProfAst());
+        
+        printlnConsoleIHM("(IHM client) historique consultations : ");
+        printlnConsoleIHM(service.rechercherListeConsultation(c.getId(), false, false, false, "", "01/01/0000"));
+        
+        printlnConsoleIHM("(IHM client) liste des mediums : ");
+        List<Medium> laliste = service.rechercherListeMedium(false, true, false, "", "F");
+        printlnConsoleIHM(laliste);
+        
+        
+        Consultation consul = service.trouverConsultation(c,laliste.get(0));
+        printlnConsoleIHM(consul);
+        
+        scenarioEmploye(consul.getEmploye());
+        
+        
+        printlnConsoleIHM("(IHM client) historique consultations : ");
+        printlnConsoleIHM(service.rechercherListeConsultation(c.getId(), false, false, false, "", "01/01/0000"));
+        
+        
+    }
+    
+    private static void scenarioEmploye(Employe e) throws IOException
+    {
+        Service service = new Service();
+        
+        Employe e2 = service.connecterEmploye("amart@insa-lyon.fr", "coucouCmoiiii");
+        printlnConsoleIHM(e2);
+        e2 = service.connecterEmploye(e.getMail(), e.getMdp());
+        printlnConsoleIHM(e2);
+        
+        Consultation consul= service.prochaineConsultation(e2);
+        
+        printlnConsoleIHM("(IHM employé) inflomations client : ");
+        printlnConsoleIHM(consul.getClient().getProfAst());
+        printlnConsoleIHM(service.rechercherListeConsultation(consul.getClient().getId(), false, false, false, "", "01/01/0000"));
+        
+        service.accepterConsultation(consul);
+        printlnConsoleIHM(consul);
+
+        service.demarrerConsultation(consul);
+        printlnConsoleIHM(consul);
+
+        Prediction p = service.genererPrediction(consul.getClient(), 3, 1, 1);
+        service.terminerConsultation(consul, p, "client chiant");
+        printlnConsoleIHM(consul);
+        
+        //stats
+        printlnConsoleIHM("(IHM employé) coordonnées clients : \n"+service. listerClients());
+        
+        printlnConsoleIHM("(IHM employé) consult par mediums : \n"+service.rechercherNbConsultationsMedium());
+        
+        printlnConsoleIHM("(IHM employé) clients par employes : \n"+service.rechercherNbClientParEmploye());
+    }
+    
+    private static void testerInscrireClients() throws ParseException, IOException {
+        Service service = new Service();
+
+        printlnConsoleIHM("Inscription Client C1");
+        Client c1 = new Client("Hugo", "Victor", "13/04/2004", "7 rue du Lt Col Driant", "0908785620", "victor.hugo@gmail.com", "esmeralda");
+        Boolean resultat1 = service.inscrireClient(c1);
+        printlnConsoleIHM(resultat1 + " -> Inscription client C1 " + c1);
+
+        printlnConsoleIHM("Inscription Client C1");
+        Client c2 = new Client("aquino", "diego", "13/04/2004", "20 av Albert Einstein", "07654358", "diegogo@gmail.com", "esmeralda");
+        Boolean resultat2 = service.inscrireClient(c2);
+        printlnConsoleIHM(resultat2 + " -> Inscription client C2 " + c2);
+
+        printlnConsoleIHM("Inscription Client C1");
+        Client c3 = new Client("guyonnaud", "agnes", "16/03/2004", "8 rue de Moscou", "0756453454", "agnegnes@gmail.com", "coucoucou");
+        Boolean resultat3 = service.inscrireClient(c3);
+        printlnConsoleIHM(resultat3 + " -> Inscription client C3 " + c3);
+
+    }
+    
+    public static void printlnConsoleIHM(Object o) {
+        String BG_CYAN = "\u001b[46m";
+        String RESET = "\u001B[0m";
+
+        System.out.print(BG_CYAN);
+        System.out.println(String.format("%-80s", o));
+        System.out.print(RESET);
     }
 
     @Override
