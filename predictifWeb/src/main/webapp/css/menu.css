@@ -1,39 +1,71 @@
+/* Sidebar off-screen by default */
 #sideMenu {
-    display : none;
-    display:none; position:fixed; top:0; left:0;
-    width:250px; height:100%; background:linear-gradient(to bottom right,#fffafc,#d6d6ff);
-    box-shadow:2px 0 10px rgba(0,0,0,.2);
-    padding:1.5em 1em; overflow-y:auto;
-    z-index : 1001;
-    font-family : 'Segoe UI', sans-serif;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 250px;
+  height: 100%;
+  padding: 1.5em 1em;
+  background: linear-gradient(to bottom right, #fffafc, #d6d6ff);
+  font-family: var(--font-sans);
+
+  /* slide off-screen */
+  transform: translateX(-100%);
+  transition: transform 0.3s ease-in-out;
+  z-index: 1001;
 }
 
+/* Slide back in when “open” */
+#sideMenu.open {
+  transform: translateX(0);
+}
+
+/* Menu list reset */
 #sideMenu ul {
-    list-style: none;
-    padding:0;
-    margin:0;
+  list-style: none;
+  margin: 0;
+  padding: 0;
 }
 
-#sideMenu li{
-    margin : 1em 0;
+/* Spacing between items */
+#sideMenu li {
+  margin: 1em 0;
 }
 
+/* Link styling */
 #sideMenu a {
-    display : block;
-    text-decoration: none;
-    color : 0x333;
-    font-size : 1.1em;
-    font-weight : 500;
-    transition: color 0.3s ease, transform 0.2s ease;
+  display: block;
+  padding: 0.5em 0;           /* vertical breathing room */
+  text-decoration: none;
+  color: #333;                /* fix your hex code */
+  font-size: 1.1em;
+  font-weight: 500;
+  transition: color 0.2s ease, transform 0.2s ease;
 }
-#menuOverlay {
-    position:fixed; top:0; left:0;
-    width:100vw; height:100vh; background-color:rgba(0,0,0,0.3);
-    z-index : 1000; display : none;
+#sideMenu a:hover {
+  color: #000;
+  transform: translateX(5px);
 }
 
+/* “Déconnexion” link in red */
 #logoutLink {
-    color : #c62828
+  color: #c62828;
 }
 
+/* Overlay hidden by default */
+#menuOverlay {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100vw; height: 100vh;
+  background-color: rgba(0, 0, 0, 0.3);
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease-in-out;
+  z-index: 1000; /* one less than the menu’s z-index */
+}
 
+/* When “open” class is added, fade in */
+#menuOverlay.open {
+  opacity: 1;
+  visibility: visible;
+}

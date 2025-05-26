@@ -3,119 +3,115 @@
 
 /* 2) Variables : polices, couleurs, dégradés */
 :root {
-  /* typographies */
-  --font-serif:    'Forum', serif;
-  --font-cursive:  'Corinthia', cursive;
-  --font-heading:  'Berkshire Swash', cursive;
-  --font-sans:     Arial, sans-serif;
+    /* typographies */
+    --font-serif:    'Forum', serif;
+    --font-cursive:  'Corinthia', cursive;
+    --font-heading:  'Berkshire Swash', cursive;
+    --font-sans:     Arial, sans-serif;
 
-  /* dégradés réutilisables */
-  --gradient-in:   linear-gradient(135deg, rgba(226,171,221,1) 0%, rgba(189,231,251,1) 100%);
-  --gradient-btn:  linear-gradient(90deg,  rgba(242,164, 59,1) 0%, rgba(249,221, 74,1) 100%);
-  --bg-start:      rgba(213,253,254,1);
-  --bg-end:        rgba(249,221,238,1);
+    /* dégradés réutilisables */
+    --gradient-in:   linear-gradient(135deg, rgba(226,171,221,1) 0%, rgba(189,231,251,1) 100%);
+    --gradient-btn:  linear-gradient(90deg,  rgba(242,164, 59,1) 0%, rgba(249,221, 74,1) 100%);
+    --bg-start:      #fdf0ff;
+    --bg-end:        #d6e4ff;
 
-  /* couleurs */
-  --border-color:  #333;
-  --text-color:    #333;
-  --font-serif: 'Crimson Text', serif;
-  --font-cursive: 'Corinthia', cursive;
-  --font-sans:    Arial, sans-serif;
-  --font-heading  : var(--font-serif);
+    /* couleurs */
+    --border-color:  #333;
+    --text-color:    #333;
 }
 
-/* 3) Reset de base */
 * {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
 }
 
-/* 4) Polices de base */
 body, input, button {
-  font-family: var(--font-sans);
-  color: var(--text-color);
+    font-family: var(--font-sans);
+    color: var(--text-color);
 }
 
-/* 5) Utilitaires : appliquer un dégradé de fond */
 .bg-gradient-in {
-  background: var(--gradient-in);
+    background: var(--gradient-in);
 }
 .bg-gradient-btn {
-  background: var(--gradient-btn);
+    background: var(--gradient-btn);
 }
 
-/* 6) Composant : champs de formulaire arrondis */
+/* COMPOSANT : Input */
 .form-input {
-  width: 260px;
-  max-width: 80vw;
-  padding: 0.6rem 1rem;
-  font-size: 1.1rem;
-  font-family: var(--font-serif);
-  border: 2px solid var(--border-color);
-  border-radius: 30px;
-  outline: none;
-  color: #000;
-  background: var(--gradient-in);
+    width: 260px;
+    max-width: 80vw;
+    padding: 0.6rem 1rem;
+    font-size: 1.1rem;
+    font-family: var(--font-serif);
+    border: 2px solid var(--border-color);
+    border-radius: 30px;
+    outline: none;
+    color: #000;
+    background: var(--gradient-in);
 }
 
-/* Dégradé bleu-rose global */
+/* COMPOSANTS : Body dégradé et centré */
 .gradient-body {
-  background: linear-gradient(to bottom, var(--bg-start), var(--bg-end));
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  min-height: 100vh;
+    background: linear-gradient(to bottom, var(--bg-start), var(--bg-end));
+    min-height: 100vh;
 }
 
-/* 7) Composant : bouton principal */
+.centered-body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* COMPOSANT : Bouton principal */
 .btn-primary {
-  display: inline-block;
-  margin: 1.5rem auto;
-  padding: 0.8rem 2rem;
-  font-size: 1.25rem;
-  font-family: var(--font-serif);
-  font-weight: bold;
-  color: var(--border-color);
-  background: linear-gradient(90deg,  rgba(242,164, 59,1) 0%, rgba(249,221, 74,1) 100%);
-  border: 2px solid var(--border-color);
-  border-radius: 30px;
-  cursor: pointer;
-  transition: transform 0.2s ease;
+    display: inline-block;
+    margin: 1.5rem auto;
+    padding: 0.8rem 2rem;
+    font-size: 1.25rem;
+    font-family: var(--font-serif);
+    font-weight: bold;
+    color: var(--border-color);
+    background: linear-gradient(90deg,  rgba(242,164, 59,1) 0%, rgba(249,221, 74,1) 100%);
+    border: 2px solid var(--border-color);
+    border-radius: 30px;
+    cursor: pointer;
+    transition: transform 0.2s ease;
 }
 .btn-primary:hover {
-  transform: scale(1.05);
+    transform: scale(1.05);
 }
 
-/* 8) Composant : bouton secondaire */
+/* COMPOSANT : Bouton Secondaire */
 .btn-secondary {
-  display: inline-block;
-  margin: 1.5rem auto;
-  padding: 0.8rem 2rem;
-  font-size: 1.25rem;
-  font-family: var(--font-serif);
-  font-weight: bold;
-  color: var(--border-color);
-  background: linear-gradient(90deg, #8c52ff 0%, #5ce1e6 100%);
-  border: 2px solid var(--border-color);
-  border-radius: 30px;
-  cursor: pointer;
-  transition: transform 0.2s ease;
+    display: inline-block;
+    margin: 1.5rem auto;
+    padding: 0.8rem 2rem;
+    font-size: 1.25rem;
+    font-family: var(--font-serif);
+    font-weight: bold;
+    color: var(--border-color);
+    background: linear-gradient(90deg, #8c52ff 0%, #5ce1e6 100%);
+    border: 2px solid var(--border-color);
+    border-radius: 30px;
+    cursor: pointer;
+    transition: transform 0.2s ease;
 }
-.btn-primary:hover {
-  transform: scale(1.05);
+.btn-secondary:hover {
+    transform: scale(1.05);
 }
 
 /* Zone d'erreur */
 #error:empty {
-  display: none;
+    display: none;
 }
 #error:not(:empty) {
-  margin-top: 1rem;
-  font-size: 0.9rem;
-  color: #880e4f;
-  background-color: rgba(255, 0, 0, 0.1);
-  border: 2px solid #880e4f;
-  border-radius: 8px;
-  padding: 0.5rem 1rem;
+    margin-top: 1rem;
+    font-size: 0.9rem;
+    color: #880e4f;
+    background-color: rgba(255, 0, 0, 0.1);
+    border: 2px solid #880e4f;
+    border-radius: 8px;
+    padding: 0.5rem 1rem;
 }

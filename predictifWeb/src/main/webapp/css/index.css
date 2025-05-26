@@ -1,24 +1,12 @@
-body{
-    margin : 0;
-    min-height : 100vh;
-    background: linear-gradient(to bottom right, #fdf0ff,#d6e4ff);
-    font-family : var(--font-sans);
-    overflow-x : hidden;
-}
-
-html{
-    scroll-behavior : smooth;
-}
-
-main {
+body {
     max-width : 800px;
     margin : auto;
     padding : 2rem;
-    text-align : justify;
+    text-align : left;
 }
 
 section {
-    margin-top : 60px;
+    margin-top : 2rem;
 }
 
 section > div {
@@ -38,6 +26,10 @@ article {
     flex : 1 1 200px;
     max-width: 250px;
     text-align : center;
+    transition: transform 0.2s ease;
+}
+article:hover {
+    transform: scale(1.05);
 }
 
 article img {
@@ -45,7 +37,7 @@ article img {
     height : 120px;
     object-fit : cover;
     border-radius: 50%;
-    margin-bottom : 0 2px 8px rgba(0,0,0,0.15);
+    margin-bottom: 0.5rem;
     display : block;
     margin-left : auto;
     margin-right : auto;
@@ -54,4 +46,29 @@ article img {
 .titre-cursive {
     font-family: var(--font-cursive);
     font-size: 2rem;
+}
+
+/* 1) Make the nav a row that pushes its contents to the far right */
+nav {
+  max-width: 800px;       /* exactly your content width */
+  margin: 0 auto;         /* center it in the viewport */
+  padding: 1rem 0;        /* vertical breathing room */
+  display: flex;          /* flex row, left→right */
+  justify-content: flex-end;  /* push child(ren) to the right edge */
+  align-items: center;    /* vertical centering if nav has height */
+  gap: 1rem;              /* space between menu button and auth links */
+}
+
+#authLinks {
+  display: flex;
+  gap: 1rem;
+}
+
+#authLinks a,
+#btnMenu {
+  display: inline-block;
+}
+
+#authLinks .btn-secondary {
+    margin-left: 1rem;
 }

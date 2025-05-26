@@ -1,82 +1,76 @@
 <!DOCTYPE html>
 <html lang="fr">
-<head>
-    <link rel="stylesheet" href ="css/index.css">
-      <link rel="stylesheet" href ="css/menu.css">
-      <link rel="stylesheet" href="css/style.css">
-  <meta charset="UTF-8">
-  <title>Predict’IF</title>
-      
-
-</head>
-<body>
-
-  <header>
-    <nav>
-      <!-- 1) Le bouton Menu, caché par défaut -->
-      <button id="btnMenu" style="display:none">☰ Menu</button>
-
-      <!-- 2) Les liens Se connecter / S’inscrire, visibles par défaut -->
-      <span id="authLinks">
-          <a href="connexion.html" class="btn-primary"> Connexion </a>
-       <a href="inscription.html" class="btn-secondary">S’inscrire</a>
-      </span>
-    </nav>
-  </header>
-
-  <main>
-    <h1>PREDICT’IF</h1>
-    <section></section>
-    <p>
-      PREDICT’IF est un cabinet de voyance par téléphone. Nos médiums sont des spirites, cartomanciens ou astrologues. 
-      Reconnus internationalement, ils ont été sélectionnés avec la plus grande rigueur, et sont réunis pour travailler 
-      avec précision et sérieux dans leur spécialité respective. Leurs prédictions personnalisées répondent à toutes 
-      les questions d’ordre sentimental, professionnel et psychologique dans le plus strict respect de la déontologie.
-    </p>
+    <head>
+        <link rel="stylesheet" href ="css/style.css">
+        <link rel="stylesheet" href ="css/index.css">
+        <link rel="stylesheet" href ="css/menu.css">
+        <meta charset="UTF-8">
+        <title>Predict’IF</title>
+    </head>
     
- 
+    <body class="gradient-body">
+        <nav>
+            <button id="btnMenu" style="display:none" class="btn-primary">☰ Menu</button>
+            <span id="authLinks">
+                <a href="connexion.html" class="btn-primary"> Connexion </a>
+                <a href="inscription.html" class="btn-secondary">S’inscrire</a>
+            </span>
+        </nav>
 
-    <section>
-      <h2>À propos de nos médiums</h2>
-      <div>
-        <article>
-          <img src="assets/imgBouleCristal.png" alt="Spirite"/> 
-          <h3 class="titre-cursive">Spirite</h3>
-          <p>Utilise des séances de médiumnité pour communiquer avec l’au-delà.</p>
-        </article>
-        <article>
-          <img src="assets/imgTarot.png" alt="Cartomancien"/> 
-          <h3 class="titre-cursive">Cartomancien</h3>
-          <p>Pratique l’art divinatoire de la cartomancie basé sur la lecture des cartes.</p>
-        </article>
-        <article>
-          <img src="assets/imgZodiac.png" alt="Astrologue"/> 
-          <h3 class="titre-cursive">Astrologue</h3>
-          <p>Expert en astrologie, étudie l’influence des astres sur la vie et la personnalité.</p>
-        </article>
-      </div>
-    </section>
-  </main>
+        <main>
+            <h1>PREDICT’IF</h1>
+            <section>
+                <p>
+                    PREDICT’IF est un cabinet de voyance par téléphone. Nos médiums sont des spirites, cartomanciens ou astrologues. 
+                    Reconnus internationalement, ils ont été sélectionnés avec la plus grande rigueur, et sont réunis pour travailler 
+                    avec précision et sérieux dans leur spécialité respective. Leurs prédictions personnalisées répondent à toutes 
+                    les questions d’ordre sentimental, professionnel et psychologique dans le plus strict respect de la déontologie.
+                </p>
+            </section>
 
-  <!-- 3) Le menu latéral, caché par défaut -->
-  <aside id="sideMenu" style="display:none; position:fixed; top:0; left:0;
-                             width:250px; height:100%; background:#fff; box-shadow:2px 0 5px rgba(0,0,0,.3);
-                             padding:1em; overflow-y:auto;">
-    <ul style="list-style:none; padding:0; margin:0;">
-      <li><a href="accueil.html">🏠 Accueil</a></li>
-      <li><a href="choixMedium.html">🔍 Choisir un médium</a></li>
-      <li><a href="profilAstral.html">✨ Profil astral</a></li>
-      <li><a href="historique.html">⏱️ Historique des consultations</a></li>
-      <li><a href="monCompte.html">👤 Mon compte</a></li>
-      <li><a href="#" id="logoutLink">⏻ Déconnexion</a></li>
-    </ul>
-  </aside>
 
-  <!-- 4) Zone d’erreur / infos éventuelles -->
-  <div id="error" role="alert" style="color:red;"></div>
 
-  <script src="js/index.js"></script>
-  <script src="js/menu.js"></script>
+            <section>
+                <h2>À propos de nos médiums</h2>
+                <div>
+                    <article>
+                        <img src="assets/imgBouleCristal.png" alt="Spirite"/> 
+                        <h3 class="titre-cursive">Spirite</h3>
+                        <p>Utilise des séances de médiumnité pour communiquer avec l’au‑delà.</p>
+                    </article>
+                    <article>
+                        <img src="assets/imgTarot.png" alt="Cartomancien"/> 
+                        <h3 class="titre-cursive">Cartomancien</h3>
+                        <p>Pratique l’art divinatoire de la cartomancie basé sur la lecture des cartes.</p>
+                    </article>
+                    <article>
+                        <img src="assets/imgZodiac.png" alt="Astrologue"/> 
+                        <h3 class="titre-cursive">Astrologue</h3>
+                        <p>Expert en astrologie, étudie l’influence des astres sur la vie et la personnalité.</p>
+                    </article>
+                </div>
+            </section>
+        </main>
 
-</body>
+        <!-- 3) Le menu latéral, caché par défaut -->
+        <aside id="sideMenu" style="display:none; position:fixed; top:0; left:0;
+               width:250px; height:100%; background:#fff; box-shadow:2px 0 5px rgba(0,0,0,.3);
+               padding:1em; overflow-y:auto;">
+            <ul style="list-style:none; padding:0; margin:0;">
+                <li><a href="accueil.html">🏠 Accueil</a></li>
+                <li><a href="choixMedium.html">🔍 Choisir un médium</a></li>
+                <li><a href="profilAstral.html">✨ Profil astral</a></li>
+                <li><a href="historique.html">⏱️ Historique des consultations</a></li>
+                <li><a href="monCompte.html">👤 Mon compte</a></li>
+                <li><a href="#" id="logoutLink">⏻ Déconnexion</a></li>
+            </ul>
+        </aside>
+
+        <!-- 4) Zone d’erreur / infos éventuelles -->
+        <div id="error" role="alert" style="color:red;"></div>
+
+        <script src="js/index.js"></script>
+        <script src="js/menu.js"></script>
+
+    </body>
 </html>

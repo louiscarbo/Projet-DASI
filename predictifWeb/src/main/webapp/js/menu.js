@@ -1,44 +1,33 @@
-// js/menu.js
 document.addEventListener('DOMContentLoaded', () => {
   const errorDiv = document.getElementById('error');
 
-  // 1) Injecter le menu commun
+  // 1) Inject the shared menu
   fetch('menu.html')
     .then(res => res.text())
     .then(html => {
       document.body.insertAdjacentHTML('afterbegin', html);
 
-      // 2) Paramétrer le burger + logout
       const btnMenu    = document.getElementById('btnMenu');
       const sideMenu   = document.getElementById('sideMenu');
+      const overlay    = document.getElementById('menuOverlay');
       const logoutLink = document.getElementById('logoutLink');
-      btnMenu.style.display = 'inline-block';
-      
-      /*btnMenu.addEventListener('click', () => {
-        sideMenu.style.display =
-          sideMenu.style.display === 'block' ? 'none' : 'block';
-      });
-      */
-     
-     const overlay = document.getElementById('menuOverlay');
-     
-     function openMenu (){
-         sideMenu.style.display = 'block';
-         overlay.style.display = 'block';
-     }
-     
-    function closeMenu (){
-         sideMenu.style.display = 'none';
-         overlay.style.display = 'none';
-     }
-     
-    btnMenu.addEventListener('click', openMenu);
-    overlay.addEventListener('click', closeMenu);
 
+      // 2) Toggle .open on click — no display:block hacks
+      btnMenu.addEventListener('click', () => {
+        sideMenu.classList.add('open');
+        overlay.classList.add('open');
+      });
+
+      overlay.addEventListener('click', () => {
+        sideMenu.classList.remove('open');
+        overlay.classList.remove('open');
+      });
+
+      // 3) Logout handler
       logoutLink.addEventListener('click', e => {
         e.preventDefault();
         fetch('ActionServlet?todo=deconnecter')
-          .then(res => res.json())
+          .then(r => r.json())
           .then(() => window.location.href = '/')
           .catch(err => {
             console.error(err);
@@ -46,7 +35,7 @@ document.addEventListener('DOMContentLoaded', () => {
           });
       });
 
-      // 3) Vérifier la session pour masquer totalement le menu si non connecté
+      // 4) Check session: hide menu button completely if not logged
       return fetch('ActionServlet?todo=checkSession', {
         headers: { 'Accept': 'application/json' }
       });
@@ -58,7 +47,7 @@ document.addEventListener('DOMContentLoaded', () => {
     .then(data => {
       if (!data.connected) {
         document.getElementById('btnMenu').style.display = 'none';
-        document.getElementById('sideMenu').style.display = 'none';
+        // no need to fiddle sideMenu/overlay here
       }
     })
     .catch(err => {
