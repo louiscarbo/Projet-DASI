@@ -1,0 +1,15 @@
+@import url('https://fonts.googleapis.com/css2?family=Corinthia:wght@400;700&family=Crimson+Text:ital,wght@0,400;0,600;0,700;1,400;1,600;1,700&display=swap');
+
+:root {
+  --font-serif: 'Crimson Text', serif;
+  --font-cursive: 'Corinthia', cursive;
+  --font-sans:    Arial, sans-serif;
+}
+
+h1, h2, h3 {
+  font-family: var(--font-heading);
+}
+
+body, input, button {
+  font-family: var(--font-sans);
+}
