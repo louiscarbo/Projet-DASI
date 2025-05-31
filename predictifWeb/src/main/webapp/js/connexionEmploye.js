@@ -1,7 +1,7 @@
 document.addEventListener('DOMContentLoaded', () => {
-  const mailInput = document.getElementById('mailEmp');
-  const mdpInput  = document.getElementById('mdpEmp');
-  const btn       = document.getElementById('btnValiderEmp');
+  const mailInput = document.getElementById('mail');
+  const mdpInput  = document.getElementById('mdp');
+  const btn       = document.getElementById('btnValider');
   const errorDiv  = document.getElementById('error');
 
   btn.addEventListener('click', async () => {
