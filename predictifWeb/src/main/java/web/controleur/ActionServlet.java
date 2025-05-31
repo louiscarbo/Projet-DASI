@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package web.controleur;
 
 import dao.JpaUtil;
@@ -33,6 +28,7 @@ import web.modele.DeconnecterEmployeAction;
 import web.modele.DemarrerConsultationAction;
 import web.modele.GenererPredictionAction;
 import web.modele.InscrireClientAction;
+import web.modele.ObtenirStatistiquesAction;
 import web.modele.ProchaineConsultationAction;
 import web.modele.ProfilAstralAction;
 import web.modele.ReserverConsultationAction;
@@ -50,6 +46,7 @@ import web.vue.DeconnecterEmployeSerialisation;
 import web.vue.DemarrerConsultationSerialisation;
 import web.vue.GenererPredictionSerialisation;
 import web.vue.InscrireClientSerialisation;
+import web.vue.ObtenirStatistiquesSerialisation;
 import web.vue.ProchaineConsultationSerialisation;
 import web.vue.ProfilAstralSerialisation;
 import web.vue.ReserverConsultationSerialisation;
@@ -162,6 +159,11 @@ protected void processRequest(HttpServletRequest request, HttpServletResponse re
         case "consulterDetailsConsultation":
             new ConsulterDetailsConsultationAction(service).execute(request);
             new ConsulterDetailsConsultationSerialisation().appliquer(request, response);
+            break;
+            
+        case "statistiquesPage":
+            new ObtenirStatistiquesAction(service).execute(request);
+            new ObtenirStatistiquesSerialisation().appliquer(request, response);
             break;
 
         default:

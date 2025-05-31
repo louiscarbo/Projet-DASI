@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>Statistiques</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/statistiques.css">
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBQl39F85GBKydbYSzVaIaAQzz4UXLJZ5E"></script>
+</head>
+<body class="gradient-body">
+
+  <nav>
+    <button id="btnRetour" class="btn-secondary">← Retour</button>
+  </nav>
+
+  <main>
+    <h1>Statistiques</h1>
+
+    <section id="statMapSection">
+      <h2>Clients</h2>
+      <div id="map"></div>
+      <!-- infobulle sera ouverte via JS -->
+    </section>
+
+    <section id="statTablesSection">
+      <div class="stat-block">
+        <h2>Employés</h2>
+        <table id="tblEmployes">
+          <thead>
+            <tr>
+              <th>Prénom</th>
+              <th>Nom</th>
+              <th>Nombre de Consultations</th>
+            </tr>
+          </thead>
+          <tbody>
+            <!-- rempli par JS -->
+          </tbody>
+        </table>
+      </div>
+
+      <div class="stat-block">
+        <h2>Médiums</h2>
+        <table id="tblMediums">
+          <thead>
+            <tr>
+              <th>Nom</th>
+              <th>Spécialité</th>
+              <th>Nombre Clients</th>
+            </tr>
+          </thead>
+          <tbody>
+            <!-- rempli par JS -->
+          </tbody>
+        </table>
+      </div>
+    </section>
+  </main>
+
+  <!-- Modal pour historique des clients d'un employé -->
+  <div id="modalHistorique" class="modal-overlay">
+    <div class="modal-content">
+      <button id="closeModal" class="btn-close">×</button>
+      <h3>Historique des clients</h3>
+      <table id="tblHistorique">
+        <thead>
+          <tr>
+            <th>Prénom</th>
+            <th>Nom</th>
+            <th>Date de naissance</th>
+            <th>Téléphone</th>
+          </tr>
+        </thead>
+        <tbody>
+          <!-- rempli par JS -->
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <script src="js/statistiques.js"></script>
+</body>
+</html>
