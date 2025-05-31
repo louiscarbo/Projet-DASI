@@ -1,0 +1,136 @@
+.aec-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+}
+
+.aec-title {
+  font-family: var(--font-heading);
+  font-size: 1.5rem;
+  color: var(--text-color);
+}
+
+.aec-main {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 1rem;
+  text-align: center;
+}
+
+.aec-section {
+  margin-top: 2rem;
+}
+
+.aec-call-content,
+.aec-validate-content {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding-bottom: 1rem;
+}
+
+/* Prédictions comme carte */
+.aec-preds {
+  background: #fff;
+  border-radius: 0.75rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  padding: 1rem;
+  flex: 1;
+  min-width: 250px;
+}
+
+.aec-preds h2,
+.aec-preds h3 {
+  font-family: var(--font-serif);
+  font-size: 1.2rem;
+  margin-bottom: 0.5rem;
+  color: var(--text-color);
+}
+
+.aec-preds textarea {
+  width: 100%;
+  min-height: 100px;
+  padding: 0.5rem;
+  font-size: 1rem;
+  border: 1px solid var(--border-color);
+  border-radius: 0.5rem;
+  background: var(--bg-start);
+  color: #000;
+}
+
+/* Contrôles comme carte */
+.aec-controls {
+  background: #fff;
+  border-radius: 0.75rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  padding: 1rem;
+  flex: 1;
+  min-width: 250px;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  align-items: flex-start;
+}
+
+.form-input-small {
+  width: 60px;
+  padding: 0.3rem;
+  font-size: 1rem;
+  border: 1px solid var(--border-color);
+  border-radius: 0.5rem;
+  background: var(--bg-start);
+  color: #000;
+  margin-left: 0.5rem;
+}
+
+.aec-gen-btn {
+  margin-top: 0.5rem;
+}
+
+/* Commentaire comme carte */
+.aec-comment {
+  background: #fff;
+  border-radius: 0.75rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  padding: 1rem;
+  flex: 1;
+  min-width: 250px;
+}
+
+.aec-comment textarea {
+  width: 100%;
+  padding: 0.5rem;
+  font-size: 1rem;
+  border: 1px solid var(--border-color);
+  border-radius: 0.5rem;
+  background: var(--bg-start);
+  color: #000;
+}
+
+.aec-validate-btn {
+  margin-top: 1rem;
+}
+
+.aec-error {
+  margin-top: 1.5rem;
+  color: #ff4444;
+  background-color: rgba(255, 0, 0, 0.1);
+  border: 1px solid #ff4444;
+  border-radius: 6px;
+  padding: 0.5rem 1rem;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+  display: none;
+  text-align: center;
+}
+
+.aec-error:not(:empty) {
+  display: block;
+}
+
+.hidden {
+  display: none;
+}

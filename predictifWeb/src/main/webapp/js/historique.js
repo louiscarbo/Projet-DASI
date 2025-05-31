@@ -49,7 +49,7 @@ document.addEventListener('DOMContentLoaded', () => {
           <td>${c.medium}</td>
           <td>${c.type}</td>
           <td>
-            <button class="btnDetail" data-id="${c.id}">+</button>
+            <button class="btnDetail" data-id="${c.id}">Voir les Prédictions</button>
           </td>`;
         tr.querySelector('button.btnDetail')
           .addEventListener('click', () => {

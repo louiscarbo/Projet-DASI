@@ -3,47 +3,45 @@
 <head>
   <meta charset="UTF-8">
   <title>Mes Consultations</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/historique.css">
 </head>
-<body>
+<body class="gradient-body">
 
-  <!-- Header commun -->
-  <header>
-    <button id="btnMenu">☰</button>
+  <header class="hist-header">
+    <button id="btnMenu" class="btn-primary">☰ Menu</button>
   </header>
 
-  <main style="display:flex; gap:1em;">
-
-    <!-- Volet Filtres -->
-    <aside id="filterPanel" style="width:200px;">
+  <main class="hist-main">
+    <aside id="filterPanel" class="hist-filter">
       <h2>Filtres</h2>
-      <fieldset>
+      <fieldset class="hist-fieldset">
         <legend>Type :</legend>
-        <label><input type="checkbox" id="filterCarto"> Cartomancien</label><br>
-        <label><input type="checkbox" id="filterSpirite"> Spirite</label><br>
+        <label><input type="checkbox" id="filterCarto"> Cartomancien</label>
+        <label><input type="checkbox" id="filterSpirite"> Spirite</label>
         <label><input type="checkbox" id="filterAstro"> Astrologue</label>
       </fieldset>
-      <fieldset>
-        <legend>Medium :</legend>
-        <select id="filterMedium">
+      <fieldset class="hist-fieldset">
+        <legend>Médium :</legend>
+        <select id="filterMedium" class="form-input-small">
           <option value="">Tous</option>
         </select>
       </fieldset>
-      <fieldset>
+      <fieldset class="hist-fieldset">
         <legend>Depuis :</legend>
-        <input type="text" id="filterSince" placeholder="JJ/MM/AAAA">
+        <input type="text" id="filterSince" class="form-input-small" placeholder="JJ/MM/AAAA">
       </fieldset>
-      <button id="btnFilter">Filtrer</button>
+      <button id="btnFilter" class="btn-primary hist-filter-btn">Filtrer</button>
     </aside>
 
-    <!-- Résultats -->
-    <section style="flex:1;">
-      <table>
+    <section class="hist-results">
+      <table class="cd-table">
         <thead>
           <tr>
             <th>Date</th>
-            <th>Medium</th>
+            <th>Médium</th>
             <th>Type</th>
-            <th> Détails </th>
+            <th>Détails</th>
           </tr>
         </thead>
         <tbody id="tableContent">
@@ -51,12 +49,10 @@
         </tbody>
       </table>
     </section>
-
   </main>
 
-  <div id="error" style="color:red;"></div>
+  <div id="error" class="cd-error"></div>
 
-  <!-- Scripts -->
   <script src="js/menu.js"></script>
   <script src="js/historique.js"></script>
 </body>

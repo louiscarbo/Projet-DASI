@@ -1,0 +1,156 @@
+/* Header et bouton “Retour” */
+.cd-header {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 1rem 2rem;
+}
+
+.cd-back {
+  font-size: 1.2em;
+  color: var(--text-color);
+  text-decoration: none;
+  font-weight: bold;
+}
+
+/* Titre principal de la page */
+.cd-title {
+  font-family: var(--font-heading);
+  font-size: 2.5rem;
+  text-align: center;
+  margin: 1.5rem 0;
+  color: var(--text-color);
+}
+
+/* Conteneur des deux cartes alignées horizontalement */
+.cd-cards-container {
+  display: flex;
+  gap: 2rem;
+  flex-wrap: nowrap;  /* ne passe pas à la ligne */
+  margin-bottom: 1.5rem;
+}
+
+/* Style générique de chaque carte */
+.cd-card {
+  background: #fff;
+  border-radius: 1rem;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  padding: 1rem;
+  flex: 0 1 auto;   /* la carte prend juste la place nécessaire */
+}
+
+/* Titre interne de chaque carte */
+.cd-card-title {
+  font-family: var(--font-serif);
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  color: var(--text-color);
+  border-bottom: 2px solid var(--border-color);
+  padding-bottom: 0.5rem;
+}
+
+/* Table de formulaire à deux colonnes */
+.cd-form-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 1rem;
+}
+
+/* Chaque cellule occupe 50 % de la largeur disponible */
+.cd-form-table td.cd-form-cell {
+  width: 50%;
+  padding: 0.5rem 1rem 0rem 0rem;
+  vertical-align: top;
+}
+
+.cd-card .cd-form-cell label {
+  display: block;
+  font-family: var(--font-serif);
+  font-size: 1rem;
+  color: var(--text-color);
+}
+
+/* Séparateur « Profil Astral » pleine largeur */
+.cd-profile-header {
+  font-family: var(--font-serif);
+  font-size: 1.1rem;
+  color: var(--text-color);
+  padding-top: 0.5rem;
+  text-align: left;
+}
+
+/* Inputs readonly */
+.form-input {
+  display: block;
+  width: 100%;
+  padding: 0.5rem 1rem;
+  font-size: 1rem;
+  border: 2px solid var(--border-color);
+  border-radius: 0.5rem;
+  background: var(--bg-start);
+  color: #000;
+  outline: none;
+}
+
+/* Section “Historique des consultations” */
+.cd-section-title {
+  font-family: var(--font-serif);
+  font-size: 1.2rem;
+  margin-top: 1rem;
+  margin-bottom: 0.5rem;
+  color: var(--text-color);
+}
+
+/* Tableau d’historique (tout en bas de la carte) */
+.cd-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 1rem;
+}
+
+.cd-table th,
+.cd-table td {
+  padding: 0.6rem;
+  border: 1px solid var(--border-color);
+  text-align: left;
+  font-size: 0.95rem;
+}
+
+.cd-table thead th {
+  background: linear-gradient(to right, var(--bg-start), var(--bg-end));
+  color: #fff;
+}
+
+.cd-table tbody tr:nth-child(even) {
+  background: rgba(0, 0, 0, 0.02);
+}
+
+/* Boutons sous la carte */
+.cd-buttons {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  margin-bottom: 1rem;
+}
+
+.hidden {
+  display: none;
+}
+
+/* Zone d’erreur */
+.cd-error {
+  max-width: 600px;
+  margin: 0 auto 1.5rem;
+  padding: 0.5rem 1rem;
+  background-color: rgba(255, 0, 0, 0.1);
+  border: 1px solid #ff4444;
+  border-radius: 0.5rem;
+  color: #ff4444;
+  font-size: 0.95rem;
+  text-align: center;
+  display: none;
+}
+
+.cd-error:not(:empty) {
+  display: block;
+}

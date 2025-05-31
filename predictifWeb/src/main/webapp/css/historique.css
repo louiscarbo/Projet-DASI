@@ -1,0 +1,111 @@
+/* Header */
+.hist-header {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 1rem 2rem;
+}
+
+/* Conteneur principal */
+.hist-main {
+  display: flex;
+  gap: 1rem;
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 1rem;
+}
+
+/* Panneau de filtres */
+.hist-filter {
+  width: 200px;
+  background: #fff;
+  border-radius: 0.5rem;
+  padding: 1rem;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+
+.hist-filter h2 {
+  font-family: var(--font-serif);
+  font-size: 1.2rem;
+  margin-bottom: 0.5rem;
+  color: var(--text-color);
+}
+
+.hist-fieldset {
+  margin-bottom: 1rem;
+  border: 1px solid var(--border-color);
+  border-radius: 0.5rem;
+  padding: 0.5rem;
+}
+
+.hist-fieldset legend {
+  font-family: var(--font-serif);
+  font-size: 1rem;
+}
+
+.hist-filter label {
+  display: block;
+  margin: 0.3rem 0;
+  font-size: 0.95rem;
+}
+
+/* Bouton “Filtrer” */
+.hist-filter-btn {
+  margin-top: 0.5rem;
+  width: 100%;
+}
+
+/* Section des résultats */
+.hist-results {
+  flex: 1;
+}
+
+.hist-results .cd-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.hist-results th,
+.hist-results td {
+  padding: 0.6rem;
+  border: 1px solid var(--border-color);
+  text-align: left;
+  font-size: 0.95rem;
+}
+
+.hist-results thead th {
+  background: linear-gradient(to right, var(--bg-start), var(--bg-end));
+  color: #fff;
+}
+
+.hist-results tbody tr:nth-child(even) {
+  background: rgba(0, 0, 0, 0.02);
+}
+
+/* Zone d’erreur */
+.cd-error {
+  max-width: 600px;
+  margin: 1rem auto;
+  padding: 0.5rem 1rem;
+  background-color: rgba(255, 0, 0, 0.1);
+  border: 1px solid #ff4444;
+  border-radius: 6px;
+  color: #ff4444;
+  font-size: 0.95rem;
+  text-align: center;
+  display: none;
+}
+.cd-error:not(:empty) {
+  display: block;
+}
+
+/* Taille réduite pour select et input date */
+.form-input-small {
+  width: 100%;
+  padding: 0.3rem;
+  font-size: 0.95rem;
+  border: 1px solid var(--border-color);
+  border-radius: 0.5rem;
+  background: var(--bg-start);
+  color: #000;
+}
