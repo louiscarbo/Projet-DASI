@@ -139,11 +139,3 @@ main {
 @keyframes slideInRight {
   to { right: 0; }
 }
-
-/* Survol : léger mouvement latéral */
-.bg-left:hover {
-  transform: translateX(-10px);
-}
-.bg-right:hover {
-  transform: translateX(10px);
-}

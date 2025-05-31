@@ -24,6 +24,10 @@ article {
 article:hover {
     transform: scale(1.05);
 }
+article p {
+    font-family: var(--font-serif);
+    font-size: 1.2rem;
+}
 
 article img {
     width : 120px;
