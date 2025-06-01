@@ -6,54 +6,62 @@
   <link rel="stylesheet" href="css/style.css">
   <link rel="stylesheet" href="css/historique.css">
 </head>
-<body class="gradient-body">
+<body class="profile-body">
+  <!-- Fonds étoilé et rideaux -->
+  <div class="bg-wrapper">
+    <img src="/assets/space-bg.jpg" alt="background stars" class="bg-star">
+    <img src="/assets/rideau-gauche.png" alt="rideau gauche" class="bg-left">
+    <img src="/assets/rideau-droite.png" alt="rideau droite" class="bg-right">
+  </div>
 
-  <header class="hist-header">
-    <button id="btnMenu" class="btn-primary">☰ Menu</button>
-  </header>
+  <div class="content-wrapper">
+    <header>
+       
+        <a href="index.html" class="btn-primary" style="margin : 1rem;">Accueil </a>
+    </header>
 
-  <main class="hist-main">
-    <aside id="filterPanel" class="hist-filter">
-      <h2>Filtres</h2>
-      <fieldset class="hist-fieldset">
-        <legend>Type :</legend>
-        <label><input type="checkbox" id="filterCarto"> Cartomancien</label>
-        <label><input type="checkbox" id="filterSpirite"> Spirite</label>
-        <label><input type="checkbox" id="filterAstro"> Astrologue</label>
-      </fieldset>
-      <fieldset class="hist-fieldset">
-        <legend>Médium :</legend>
-        <select id="filterMedium" class="form-input-small">
-          <option value="">Tous</option>
-        </select>
-      </fieldset>
-      <fieldset class="hist-fieldset">
-        <legend>Depuis :</legend>
-        <input type="text" id="filterSince" class="form-input-small" placeholder="JJ/MM/AAAA">
-      </fieldset>
-      <button id="btnFilter" class="btn-primary hist-filter-btn">Filtrer</button>
-    </aside>
+    <main class="historique-layout">
+      <!-- Filtres à gauche -->
+      <aside class="filter-panel">
+        <div class="checkboxes">
+          <label><input type="checkbox" id="filterCarto"> Cartomancien</label>
+          <label><input type="checkbox" id="filterSpirite"> Spirite</label>
+          <label><input type="checkbox" id="filterAstro"> Astrologue</label>
+        </div>
+        <div class="select-box">
+          <label for="filterMedium">Médium</label>
+          <select id="filterMedium" class="form-input">
+            <option value="">Tous</option>
+          </select>
+        </div>
+        <div class="date-box">
+          <label for="filterSince">Depuis</label>
+          <input type="text" id="filterSince" placeholder="JJ/MM/AAAA" class="form-input">
+        </div>
+        <button id="btnFilter" class="btn-primary">Filtrer</button>
+        <div id="error"></div>
+      </aside>
 
-    <section class="hist-results">
-      <table class="cd-table">
-        <thead>
-          <tr>
-            <th>Date</th>
-            <th>Médium</th>
-            <th>Type</th>
-            <th>Détails</th>
-          </tr>
-        </thead>
-        <tbody id="tableContent">
-          <!-- lignes injectées ici -->
-        </tbody>
-      </table>
-    </section>
-  </main>
+      <!-- Tableau à droite -->
+      <section class="table-section">
+                <h1 class="table-title">Mes Consultations</h1>
 
-  <div id="error" class="cd-error"></div>
+        <table>
+          <thead>
+            <tr>
+              <th>Date</th>
+              <th>Médium</th>
+              <th>Type</th>
+            </tr>
+          </thead>
+          <tbody id="tableContent">
+            <!-- Lignes insérées dynamiquement via JS -->
+          </tbody>
+        </table>
+      </section>
+    </main>
+  </div>
 
-  <script src="js/menu.js"></script>
   <script src="js/historique.js"></script>
 </body>
 </html>
