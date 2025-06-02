@@ -1,89 +1,89 @@
 <!DOCTYPE html>
 <html lang="fr">
-<head>
-  <meta charset="UTF-8">
-  <title>Appel en cours</title>
-  <link rel="stylesheet" href="css/style.css">
-  <link rel="stylesheet" href="css/appelEnCours.css">
-</head>
-<body class="gradient-body">
+    <head>
+        <meta charset="UTF-8">
+        <title>Appel en cours</title>
+        <link rel="stylesheet" href="css/style.css">
+        <link rel="stylesheet" href="css/appelEnCours.css">
+    </head>
+    <body class="gradient-body">
 
-  <header class="aec-header">
-    <span class="aec-title">☎ Appel en cours …</span>
-    <button id="btnMenu" class="btn-primary">☰ Menu</button>
-  </header>
+        <header class="aec-header">
+            <span class="aec-title">☎ Appel en cours …</span>
+            <button id="btnMenu" class="btn-primary">☰ Menu</button>
+        </header>
 
-  <main class="aec-main">
+        <main class="aec-main">
 
-    <!-- État “Appel actif” -->
-    <section id="callUI" class="aec-section">
-      <div class="aec-call-content">
-        <div id="preds" class="aec-preds">
-          <h2>Prédictions</h2>
-          <div>
-            <strong>Amour :</strong>
-            <textarea id="predAmour" readonly class="form-input"></textarea>
-          </div>
-          <div>
-            <strong>Santé :</strong>
-            <textarea id="predSante" readonly class="form-input"></textarea>
-          </div>
-          <div>
-            <strong>Travail :</strong>
-            <textarea id="predTravail" readonly class="form-input"></textarea>
-          </div>
-        </div>
+            <!-- État “Appel actif” -->
+            <section id="callUI" class="aec-section">
+                <div class="aec-call-content">
+                    <div id="preds" class="aec-preds">
+                        <h2>Prédictions</h2>
+                        <div>
+                            <strong>Amour :</strong>
+                            <textarea id="predAmour" readonly class="form-input"></textarea>
+                        </div>
+                        <div>
+                            <strong>Santé :</strong>
+                            <textarea id="predSante" readonly class="form-input"></textarea>
+                        </div>
+                        <div>
+                            <strong>Travail :</strong>
+                            <textarea id="predTravail" readonly class="form-input"></textarea>
+                        </div>
+                    </div>
 
-        <div class="aec-controls">
-          <label>Amour :
-            <input type="number" id="inputAmour" min="1" max="5" value="3" class="form-input-small">
-          </label>
-          <label>Santé :
-            <input type="number" id="inputSante" min="1" max="5" value="3" class="form-input-small">
-          </label>
-          <label>Travail :
-            <input type="number" id="inputTravail" min="1" max="5" value="3" class="form-input-small">
-          </label>
-          <button id="btnGen" class="btn-primary aec-gen-btn">Générer prédiction</button>
-        </div>
-      </div>
+                    <div class="aec-controls">
+                        <label>Amour :
+                            <input type="number" id="inputAmour" min="1" max="5" value="3" class="form-input-small">
+                        </label>
+                        <label>Santé :
+                            <input type="number" id="inputSante" min="1" max="5" value="3" class="form-input-small">
+                        </label>
+                        <label>Travail :
+                            <input type="number" id="inputTravail" min="1" max="5" value="3" class="form-input-small">
+                        </label>
+                        <button id="btnGen" class="btn-primary aec-gen-btn">Générer prédiction</button>
+                    </div>
+                </div>
 
-      <button id="btnHangup" class="btn-secondary">🔴 Terminer l'Appel</button>
-    </section>
+                <button id="btnHangup" class="btn-secondary">🔴 Terminer l'Appel</button>
+            </section>
 
-    <!-- État “Validation” -->
-    <section id="validateUI" class="aec-section hidden">
-      <h2>Validation de la consultation</h2>
-      <div class="aec-validate-content">
-        <div id="preds2" class="aec-preds">
-          <h3>Prédictions</h3>
-          <div>
-            <strong>Amour :</strong>
-            <textarea id="pred2Amour" readonly class="form-input"></textarea>
-          </div>
-          <div>
-            <strong>Santé :</strong>
-            <textarea id="pred2Sante" readonly class="form-input"></textarea>
-          </div>
-          <div>
-            <strong>Travail :</strong>
-            <textarea id="pred2Travail" readonly class="form-input"></textarea>
-          </div>
-        </div>
+            <!-- État “Validation” -->
+            <section id="validateUI" class="aec-section hidden">
+                <h2>Validation de la consultation</h2>
+                <div class="aec-validate-content">
+                    <div id="preds2" class="aec-preds">
+                        <h3>Prédictions</h3>
+                        <div>
+                            <strong>Amour :</strong>
+                            <textarea id="pred2Amour" readonly class="form-input"></textarea>
+                        </div>
+                        <div>
+                            <strong>Santé :</strong>
+                            <textarea id="pred2Sante" readonly class="form-input"></textarea>
+                        </div>
+                        <div>
+                            <strong>Travail :</strong>
+                            <textarea id="pred2Travail" readonly class="form-input"></textarea>
+                        </div>
+                    </div>
 
-        <div class="aec-comment">
-          <h3>Commentaire</h3>
-          <textarea id="commentaire" rows="6" class="form-input"></textarea>
-        </div>
-      </div>
+                    <div class="aec-comment">
+                        <h3>Commentaire</h3>
+                        <textarea id="commentaire" rows="6" class="form-input"></textarea>
+                    </div>
+                </div>
 
-      <button id="btnValiderConsul" class="btn-primary aec-validate-btn">Valider</button>
-    </section>
+                <button id="btnValiderConsul" class="btn-primary aec-validate-btn">Valider</button>
+            </section>
 
-    <div id="error" class="aec-error"></div>
-  </main>
+            <div id="error" class="aec-error"></div>
+        </main>
 
-  <script src="js/menu.js"></script>
-  <script src="js/appelEnCours.js"></script>
-</body>
+        <script src="js/menu.js"></script>
+        <script src="js/appelEnCours.js"></script>
+    </body>
 </html>

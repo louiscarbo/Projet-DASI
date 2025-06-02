@@ -1,58 +1,46 @@
 <!DOCTYPE html>
 <html lang="fr">
-<head>
-  <meta charset="UTF-8">
-  <title>Accueil employé</title>
-  <!-- CSS commun au projet -->
-  <link rel="stylesheet" href="css/style.css">
-  <!-- CSS spécifique à la page “Espace Employé” -->
-  <link rel="stylesheet" href="css/espaceEmploye.css">
-</head>
+    <head>
+        <meta charset="UTF-8">
+        <title>Accueil employé</title>
+        <link rel="stylesheet" href="css/style.css">
+        <link rel="stylesheet" href="css/espaceEmploye.css">
+    </head>
 
-<body class="gradient-body">
-  
-  <!-- 1) Header / Burger menu (aligné à droite) -->
-  <header class="header-emp">
-    <button id="btnMenu" class="btn-primary">☰ Menu</button>
-  </header>
+    <body class="gradient-body">
+        <header class="header-emp">
+            <button id="btnMenu" class="btn-primary">☰ Menu</button>
+        </header>
 
-  <!-- 2) Contenu principal -->
-  <main class="main-emp">
+        <main class="main-emp">
+            <h1 class="titre-principal">Menu Principal</h1>
+            <h2 id="welcome" class="sous-titre">Bienvenue !</h2>
+            <div class="cards-container">
 
-    <h1 class="titre-principal">Menu Principal</h1>
-    <h2 id="welcome" class="sous-titre">Bienvenue, !</h2>
+                <!-- Carte “Prochain Appel” -->
+                <div class="card" id="cardNext">
+                    <h3 class="card-title">Prochain Appel</h3>
+                    <div class="card-icon">📞</div>
+                    <button id="btnNext" class="btn-primary btn-small">Consulter</button>
+                </div>
 
-    <!-- 3) Conteneur des deux cartes côte à côte -->
-    <div class="cards-container">
-      
-      <!-- Carte “Prochain Appel” -->
-      <div class="card" id="cardNext">
-        <h3 class="card-title">Prochain Appel</h3>
-        <div class="card-icon">📞</div>
-        <button id="btnNext" class="btn-primary btn-small">Consulter</button>
-      </div>
+                <!-- Carte “Statistiques” -->
+                <div class="card" id="cardStats">
+                    <h3 class="card-title">Statistiques</h3>
+                    <div class="card-icon">📊</div>
+                    <button id="btnStats" class="btn-primary btn-small">Consulter</button>
+                </div>
 
-      <!-- Carte “Statistiques” -->
-      <div class="card" id="cardStats">
-        <h3 class="card-title">Statistiques</h3>
-        <div class="card-icon">📊</div>
-        <button id="btnStats" class="btn-primary btn-small">Consulter</button>
-      </div>
+            </div>
 
-    </div>
+            <div class="logout-container">
+                <button id="btnLogoutEmp" class="btn-secondary">Déconnexion</button>
+            </div>
 
-    <!-- 4) Bouton “Déconnexion” centré en dessous des cartes -->
-    <div class="logout-container">
-      <button id="btnLogoutEmp" class="btn-secondary">Déconnexion</button>
-    </div>
+            <div id="error" role="alert" class="error-msg"></div>
 
-    <!-- 5) Zone d’erreur éventuelle -->
-    <div id="error" role="alert" class="error-msg"></div>
-
-  </main>
-
-  <!-- 6) Scripts : menu.js gère l’ouverture du burger + déconnexion + checkSession -->
-  <script src="js/menu.js"></script>
-  <script src="js/espaceEmploye.js"></script>
-</body>
+        </main>
+        <script src="js/menu.js"></script>
+        <script src="js/espaceEmploye.js"></script>
+    </body>
 </html>

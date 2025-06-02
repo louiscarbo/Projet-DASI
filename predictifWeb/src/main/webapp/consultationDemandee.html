@@ -1,152 +1,137 @@
 <!DOCTYPE html>
 <html lang="fr">
-<head>
-  <meta charset="UTF-8">
-  <title>Consultation demandée</title>
-  <link rel="stylesheet" href="css/style.css">
-  <link rel="stylesheet" href="css/consultationDemandee.css">
-</head>
-<body class="gradient-body">
+    <head>
+        <meta charset="UTF-8">
+        <title>Consultation demandée</title>
+        <link rel="stylesheet" href="css/style.css">
+        <link rel="stylesheet" href="css/consultationDemandee.css">
+    </head>
+    <body class="gradient-body">
 
-  <header class="cd-header">
-    <a href="espaceEmploye.html" class="btn-secondary">Retour</a>
-  </header>
+        <header class="cd-header">
+            <a href="espaceEmploye.html" class="btn-secondary">Retour</a>
+        </header>
 
-  <main class="cd-main">
+        <main class="cd-main">
 
-    <h1 class="cd-title">Consultation demandée</h1>
+            <h1 class="cd-title">Consultation demandée</h1>
+            
+            <div class="cd-cards-container">
+                <!-- Carte du médium -->
+                <section class="cd-card">
+                    <h2 class="cd-card-title">Médium demandé</h2>
+                    <table class="cd-form-table">
+                        <tr>
+                            <th colspan="2" class="cd-profile-header"><label for="medNom">Dénomination</label></th>
+                        </tr>
+                        <tr>
+                            <td colspan="2" class="cd-form-cell">
+                                <input type="text" id="medNom" class="form-input" readonly>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th colspan="2" class="cd-profile-header"><label for="medType">Type</label></th>
+                        </tr>
+                        <tr>
+                            <td colspan="2" class="cd-form-cell">
+                                <input type="text" id="medType" class="form-input" readonly>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th colspan="2" class="cd-profile-header"><label for="medGenre">Genre</label></th>
+                        </tr>
+                        <tr>
+                            <td colspan="2" class="cd-form-cell">
+                                <input type="text" id="medGenre" class="form-input" readonly>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th colspan="2" class="cd-profile-header"><label for="medPresentation">Présentation</label></th>
+                        </tr>
+                        <tr>
+                            <td colspan="2" class="cd-form-cell">
+                                <textarea id="medPresentation" class="form-input" rows="4" readonly></textarea>
+                            </td>
+                        </tr>
+                    </table>
+                </section>
 
-    <div class="cd-cards-container">
+                <!-- Carte Profil client + historique -->
+                <section class="cd-card">
+                    <h2 class="cd-card-title">Profil client</h2>
+                    <table class="cd-form-table">
+                        <tr>
+                            <td class="cd-form-cell">
+                                <label for="clientNom">Nom</label>
+                                <input type="text" id="clientNom" class="form-input" readonly>
+                            </td>
+                            <td class="cd-form-cell">
+                                <label for="clientPrenom">Prénom</label>
+                                <input type="text" id="clientPrenom" class="form-input" readonly>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="cd-form-cell">
+                                <label for="clientDate">Date de naissance</label>
+                                <input type="text" id="clientDate" class="form-input" readonly>
+                            </td>
+                            <td class="cd-form-cell">
+                                <label for="clientTel">Téléphone</label>
+                                <input type="text" id="clientTel" class="form-input" readonly>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th colspan="2" class="cd-profile-header">
+                                <b>Profil Astral</b>
+                            </th>
+                        </tr>
+                        <tr>
+                            <td class="cd-form-cell">
+                                <label for="astroZodiaque">Signe du zodiaque</label>
+                                <input type="text" id="astroZodiaque" class="form-input" readonly>
+                            </td>
+                            <td class="cd-form-cell">
+                                <label for="astroCouleur">Couleur</label>
+                                <input type="text" id="astroCouleur" class="form-input" readonly>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="cd-form-cell">
+                                <label for="astroChinois">Signe chinois</label>
+                                <input type="text" id="astroChinois" class="form-input" readonly>
+                            </td>
+                            <td class="cd-form-cell">
+                                <label for="astroAnimal">Animal totem</label>
+                                <input type="text" id="astroAnimal" class="form-input" readonly>
+                            </td>
+                        </tr>
+                    </table>
 
-      <!-- Carte du médium -->
-      <section class="cd-card">
-        <h2 class="cd-card-title">Médium demandé</h2>
-        <table class="cd-form-table">
-          <!-- Dénomination -->
-          <tr>
-            <th colspan="2" class="cd-profile-header"><label for="medNom">Dénomination</label></th>
-          </tr>
-          <tr>
-            <td colspan="2" class="cd-form-cell">
-              <input type="text" id="medNom" class="form-input" readonly>
-            </td>
-          </tr>
-          <!-- Type -->
-          <tr>
-            <th colspan="2" class="cd-profile-header"><label for="medType">Type</label></th>
-          </tr>
-          <tr>
-            <td colspan="2" class="cd-form-cell">
-              <input type="text" id="medType" class="form-input" readonly>
-            </td>
-          </tr>
-          <!-- Genre -->
-          <tr>
-            <th colspan="2" class="cd-profile-header"><label for="medGenre">Genre</label></th>
-          </tr>
-          <tr>
-            <td colspan="2" class="cd-form-cell">
-              <input type="text" id="medGenre" class="form-input" readonly>
-            </td>
-          </tr>
-          <!-- Présentation -->
-          <tr>
-            <th colspan="2" class="cd-profile-header"><label for="medPresentation">Présentation</label></th>
-          </tr>
-          <tr>
-            <td colspan="2" class="cd-form-cell">
-              <textarea id="medPresentation" class="form-input" rows="4" readonly></textarea>
-            </td>
-          </tr>
-        </table>
-      </section>
+                    <h3 class="cd-section-title">Historique des consultations :</h3>
+                    <table class="cd-table" id="historiqueTable">
+                        <thead>
+                            <tr>
+                                <th>Date</th>
+                                <th>Médium</th>
+                                <th>Employé</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <!-- Le JS ajoute ici -->
+                        </tbody>
+                    </table>
+                </section>
 
-      <!-- Carte Profil client + historique -->
-      <section class="cd-card">
-        <h2 class="cd-card-title">Profil client</h2>
-        <table class="cd-form-table">
+            </div>
 
-          <!-- Nom / Prénom côte à côte -->
-          <tr>
-            <td class="cd-form-cell">
-              <label for="clientNom">Nom</label>
-              <input type="text" id="clientNom" class="form-input" readonly>
-            </td>
-            <td class="cd-form-cell">
-              <label for="clientPrenom">Prénom</label>
-              <input type="text" id="clientPrenom" class="form-input" readonly>
-            </td>
-          </tr>
+            <div class="cd-buttons">
+                <button id="btnValider" class="btn-primary">Valider</button>
+                <button id="btnCommencer" class="btn-primary hidden">Commencer la consultation</button>
+            </div>
 
-          <!-- Date de naissance / Téléphone côte à côte -->
-          <tr>
-            <td class="cd-form-cell">
-              <label for="clientDate">Date de naissance</label>
-              <input type="text" id="clientDate" class="form-input" readonly>
-            </td>
-            <td class="cd-form-cell">
-              <label for="clientTel">Téléphone</label>
-              <input type="text" id="clientTel" class="form-input" readonly>
-            </td>
-          </tr>
+            <div id="error" class="cd-error"></div>
+        </main>
 
-          <!-- Séparateur Profil Astral (pleine largeur) -->
-          <tr>
-            <th colspan="2" class="cd-profile-header">
-              <b>Profil Astral</b>
-            </th>
-          </tr>
-
-          <!-- Signe du zodiaque / Couleur côte à côte -->
-          <tr>
-            <td class="cd-form-cell">
-              <label for="astroZodiaque">Signe du zodiaque</label>
-              <input type="text" id="astroZodiaque" class="form-input" readonly>
-            </td>
-            <td class="cd-form-cell">
-              <label for="astroCouleur">Couleur</label>
-              <input type="text" id="astroCouleur" class="form-input" readonly>
-            </td>
-          </tr>
-
-          <!-- Signe chinois / Animal totem côte à côte -->
-          <tr>
-            <td class="cd-form-cell">
-              <label for="astroChinois">Signe chinois</label>
-              <input type="text" id="astroChinois" class="form-input" readonly>
-            </td>
-            <td class="cd-form-cell">
-              <label for="astroAnimal">Animal totem</label>
-              <input type="text" id="astroAnimal" class="form-input" readonly>
-            </td>
-          </tr>
-        </table>
-
-        <h3 class="cd-section-title">Historique des consultations :</h3>
-        <table class="cd-table" id="historiqueTable">
-          <thead>
-            <tr>
-              <th>Date</th>
-              <th>Médium</th>
-              <th>Employé</th>
-            </tr>
-          </thead>
-          <tbody>
-            <!-- Injection JS ici -->
-          </tbody>
-        </table>
-      </section>
-
-    </div>
-
-    <div class="cd-buttons">
-      <button id="btnValider" class="btn-primary">Valider</button>
-      <button id="btnCommencer" class="btn-primary hidden">Commencer la consultation</button>
-    </div>
-
-    <div id="error" class="cd-error"></div>
-  </main>
-
-  <script src="js/consultationDemandee.js"></script>
-</body>
+        <script src="js/consultationDemandee.js"></script>
+    </body>
 </html>

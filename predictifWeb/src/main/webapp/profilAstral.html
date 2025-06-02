@@ -1,57 +1,55 @@
 <!DOCTYPE html>
 <html lang="fr">
-<head>
-  <meta charset="UTF-8">
-  <title>Profil Astral</title>
+    <head>
+        <meta charset="UTF-8">
+        <title>Profil Astral</title>
 
-  <link rel="stylesheet" href="css/style.css">
-  <link rel="stylesheet" href="css/profilAstral.css">
-</head>
+        <link rel="stylesheet" href="css/style.css">
+        <link rel="stylesheet" href="css/profilAstral.css">
+    </head>
 
-<body class="profile-body">
+    <body class="profile-body">
 
-  <div class="bg-wrapper">
-    <img src="assets/space-bg.jpg"      alt="Fond étoilé" class="bg-star">
-    <img src="assets/rideau-gauche.png" alt="Rideau gauche" class="bg-left">
-    <img src="assets/rideau-droite.png"  alt="Rideau droit" class="bg-right">
-  </div>
-
-  <div class="content-wrapper">
-
-    <header>
-      <button id="btnMenu" class="btn-primary" style="display:none">
-        ☰ Menu
-      </button>
-    </header>
-
-    <main>
-      <h1>Profil astral</h1>
-
-      <div class="astro-container">
-        <div class="astro-item">
-          <h2>Signe du Zodiaque</h2>
-          <span id="zodiaqueValue"></span>
+        <div class="bg-wrapper">
+            <img src="assets/space-bg.jpg"      alt="Fond étoilé" class="bg-star">
+            <img src="assets/rideau-gauche.png" alt="Rideau gauche" class="bg-left">
+            <img src="assets/rideau-droite.png"  alt="Rideau droit" class="bg-right">
         </div>
-        <div class="astro-item">
-          <h2>Signe Chinois</h2>
-          <span id="sgnChinoisValue"></span>
-        </div>
-        <div class="astro-item">
-          <h2>Animal Totem</h2>
-          <span id="animalValue"></span>
-        </div>
-        <div class="astro-item">
-          <h2>Couleur Totem</h2>
-          <span id="couleurValue"></span>
-        </div>
-      </div>
-    </main>
 
-    <div id="error"></div>
+        <div class="content-wrapper">
 
-  </div>
+            <header>
+                <button id="btnMenu" class="btn-primary" style="display:none">☰ Menu</button>
+            </header>
 
-  <script src="js/menu.js"></script>
-  <script src="js/profilAstral.js"></script>
-</body>
+            <main>
+                <h1>Profil astral</h1>
+
+                <div class="astro-container">
+                    <div class="astro-item">
+                        <h2>Signe du Zodiaque</h2>
+                        <span id="zodiaqueValue"></span>
+                    </div>
+                    <div class="astro-item">
+                        <h2>Signe Chinois</h2>
+                        <span id="sgnChinoisValue"></span>
+                    </div>
+                    <div class="astro-item">
+                        <h2>Animal Totem</h2>
+                        <span id="animalValue"></span>
+                    </div>
+                    <div class="astro-item">
+                        <h2>Couleur Totem</h2>
+                        <span id="couleurValue"></span>
+                    </div>
+                </div>
+            </main>
+
+            <div id="error"></div>
+
+        </div>
+
+        <script src="js/menu.js"></script>
+        <script src="js/profilAstral.js"></script>
+    </body>
 </html>
