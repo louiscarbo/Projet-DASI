@@ -7,13 +7,14 @@ document.addEventListener('DOMContentLoaded', () => {
     const errDiv = document.getElementById('error');
     const tbody = document.getElementById('tableContent');
 
-    // 1) Show/hide the filter panel
-    btnOuvrirFiltres.addEventListener('click', () => panel.style.display = "block");
-    btnFermerFiltres.addEventListener('click', () => panel.style.display = "none");
+    // Afficher/Cacher le panneau filtres
+    btnOuvrirFiltres.addEventListener('click', () => panel.style.display = 'block');
+    btnFermerFiltres.addEventListener('click', () => panel.style.display = 'none');
 
-    // 2) Core filter logic extracted
-    async function applyFilters() {
+    // Function pour appliquer les filtres
+    function applyFilters() {
         errDiv.textContent = '';
+
         const astro = document.getElementById('astro').checked;
         const carto = document.getElementById('carto').checked;
         const spirite = document.getElementById('spirite').checked;
@@ -29,62 +30,64 @@ document.addEventListener('DOMContentLoaded', () => {
             genre: genre
         });
 
-        try {
-            const response = await fetch(`ActionServlet?${params}`, {
-                method: 'GET',
-                headers: {'Accept': 'application/json'}
-            });
-            if (!response.ok)
-                throw new Error(`HTTP ${response.status}`);
-            const data = await response.json();
-
+        fetch('ActionServlet?' + params.toString(), {
+            method: 'GET',
+            headers: {'Accept': 'application/json'}
+        })
+        .then(r => r.json())
+        .then(data => {
             if (!data.success) {
                 errDiv.textContent = data.message || 'Erreur lors de la recherche de médium.';
                 return;
             }
 
-            // populate table
+            // Mise à jour du tableau quand on trouve les médiums
             tbody.innerHTML = '';
             data.mediums.forEach(med => {
                 const tr = document.createElement('tr');
                 tr.innerHTML = `
-          <td>${med.type}</td>
-          <td>${med.nom}</td>
-          <td>${med.genre}</td>
-          <td><button class="btn-reserver btn-secondary">Réserver</button></td>
-        `;
+                    <td>${med.type}</td>
+                    <td>${med.nom}</td>
+                    <td>${med.genre}</td>
+                    <td><button class="btn-reserver btn-secondary">Réserver</button></td>
+                  `
+                ;
+                // Logique du bouton de réservation
                 tr.querySelector('.btn-reserver').addEventListener('click', () => {
                     const p2 = new URLSearchParams({
                         todo: 'reserverConsultation',
                         mediumId: med.id
                     });
-                    fetch(`ActionServlet?${p2}`, {
+                    fetch('ActionServlet?' + p2.toString(), {
                         method: 'GET',
                         headers: {'Accept': 'application/json'}
                     })
-                            .then(r => r.ok ? r.json() : Promise.reject(r.status))
-                            .then(json => {
-                                if (json.success) {
-                                    window.location.href = '/historique.html';
-                                } else {
-                                    errDiv.textContent = 'La consultation n’a pas pu être réservée.';
-                                }
-                            })
-                            .catch(() => {
-                                errDiv.textContent = 'Impossible de réserver, réessayez.';
-                            });
+                    .then(r => r.json())
+                    .then(json => {
+                        if (json.success) {
+                            window.location.href = '/historique.html';
+                        } else {
+                            errDiv.textContent = 'La consultation n’a pas pu être réservée.';
+                        }
+                    })
+                    .catch(() => {
+                        errDiv.textContent = 'Impossible de réserver, réessayez.';
+                    });
                 });
                 tbody.appendChild(tr);
             });
-
-        } catch (err) {
+        })
+        .catch(err => {
             console.error(err);
             errDiv.textContent = 'Impossible de contacter le serveur, réessayez.';
-        }
+        });
     }
+    ;
 
+    // Les boutons appellent applyFilters
     nomMediumInput.addEventListener('input', applyFilters);
-
     btnApplyFilter.addEventListener('click', applyFilters);
+    
+    // Appel initial pour peupler la page à l'affichage
     applyFilters();
 });
