@@ -1,141 +1,127 @@
-/* Corps de page et wrapper des fonds */
 .profile-body {
-  margin: 0;
-  padding: 0;
-  overflow: hidden;
-  min-height: 100vh;
-  position: relative;
-  font-family: var(--font-sans);
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    min-height: 100vh;
+    position: relative;
+    font-family: var(--font-sans);
 }
 
 .bg-wrapper {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100vw;
-  height: 100vh;
-  z-index: -1;
-  overflow: hidden;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: -1;
+    overflow: hidden;
 }
 
-/* Fond étoilé (plein écran) */
 .bg-star {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
 }
 
-/* Rideau gauche — position initiale hors champ avec animation d’entrée */
 .bg-left {
-  position: absolute;
-  top: 0;
-  left: -20%;
-  height: 100vh;
-  object-fit: contain;
-  animation: slideInLeft 1s ease-out forwards;
-  transition: transform 0.3s ease;
+    position: absolute;
+    top: 0;
+    left: -20%;
+    height: 100vh;
+    object-fit: contain;
+    animation: slideInLeft 1s ease-out forwards;
+    transition: transform 0.3s ease;
 }
 
-/* Rideau droit — position initiale hors champ avec animation d’entrée */
 .bg-right {
-  position: absolute;
-  top: 0;
-  right: -20%;
-  height: 100vh;
-  object-fit: contain;
-  animation: slideInRight 1s ease-out forwards;
-  transition: transform 0.3s ease;
+    position: absolute;
+    top: 0;
+    right: -20%;
+    height: 100vh;
+    object-fit: contain;
+    animation: slideInRight 1s ease-out forwards;
+    transition: transform 0.3s ease;
 }
 
-/* Conteneur principal, devant les fonds */
 .content-wrapper {
-  position: relative;
-  z-index: 1;
-  display: flex;
-  flex-direction: column;
-  min-height: 100vh;
+    position: relative;
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
 }
 
-/* Header simple */
 header {
-  display: flex;
-  justify-content: flex-start;
-  align-items: center;
-  padding: 1rem 2rem;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 1rem 2rem;
 }
 
-/* Titre principal avec effet “glow” */
 h1 {
-  font-family: var(--font-heading);
-  font-size: 3rem;
-  text-align: center;
-  color: #fff;
-  text-shadow: 0 0 8px rgba(255, 255, 255, 0.8);
-  margin: 2rem 0 1rem;
+    font-family: var(--font-heading);
+    font-size: 3rem;
+    text-align: center;
+    color: #fff;
+    text-shadow: 0 0 8px rgba(255, 255, 255, 0.8);
+    margin: 2rem 0 1rem;
 }
 
-/* Contenu centré */
 main {
-  margin: 0 auto;
-  max-width: 600px;
-  padding: 0 1rem;
-  text-align: center;
+    margin: 0 auto;
+    max-width: 600px;
+    padding: 0 1rem;
+    text-align: center;
 }
 
-/* Listage des blocs du profil (vertical) */
 .astro-container {
-  display: flex;
-  flex-direction: column;
-  gap: 2rem;
-  margin-top: 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    margin-top: 2rem;
 }
 
-/* Titre de chaque item avec léger glow */
 .astro-item h2 {
-  font-family: var(--font-serif);
-  font-size: 1.5rem;
-  color: #fff;
-  text-shadow: 0 0 6px rgba(255, 255, 255, 0.8);
-  margin-bottom: 0.5rem;
+    font-family: var(--font-serif);
+    font-size: 1.5rem;
+    color: #fff;
+    text-shadow: 0 0 6px rgba(255, 255, 255, 0.8);
+    margin-bottom: 0.5rem;
 }
 
-/* Valeur des attributs avec glow important */
 .astro-item span {
-  display: block;
-  font-family: var(--font-cursive);
-  font-size: 3rem;
-  color: #e0e0e0;
-  text-shadow:
-    0 0 6px rgba(255, 255, 255, 0.9),
-    0 0 12px rgba(255, 255, 255, 0.7);
+    display: block;
+    font-family: var(--font-cursive);
+    font-size: 3rem;
+    color: #e0e0e0;
+    text-shadow:
+        0 0 6px rgba(255, 255, 255, 0.9),
+        0 0 12px rgba(255, 255, 255, 0.7);
 }
 
-/* Zone d’erreur masquée par défaut */
 #error {
-  margin: 1.5rem auto 0;
-  max-width: 600px;
-  font-size: 1rem;
-  color: #ff4444;
-  background-color: rgba(255, 0, 0, 0.1);
-  border: 1px solid #ff4444;
-  border-radius: 6px;
-  padding: 0.5rem 1rem;
-  text-align: center;
-  display: none;
+    margin: 1.5rem auto 0;
+    max-width: 600px;
+    font-size: 1rem;
+    color: #ff4444;
+    background-color: rgba(255, 0, 0, 0.1);
+    border: 1px solid #ff4444;
+    border-radius: 6px;
+    padding: 0.5rem 1rem;
+    text-align: center;
+    display: none;
 }
 #error:not(:empty) {
-  display: block;
+    display: block;
 }
 
-/* Animation d’entrée pour le rideau gauche */
 @keyframes slideInLeft {
-  to { left: 0; }
+    to { left: 0; }
 }
 
-/* Animation d’entrée pour le rideau droit */
 @keyframes slideInRight {
-  to { right: 0; }
+    to { right: 0; }
 }

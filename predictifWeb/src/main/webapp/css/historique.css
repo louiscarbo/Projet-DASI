@@ -78,7 +78,7 @@ td button:hover {
 }
 
 ​​​​​.bg-wrapper {
-  position: fixed; /* Utilise fixed pour qu'il reste en arrière-plan */
+  position: fixed;
   top: 0;
   left: 0;
   width: 100vw;
@@ -102,7 +102,7 @@ td button:hover {
   top: 0;
   height: 100vh;
   object-fit: contain;
-  z-index: -1; /* légèrement devant l’étoilé */
+  z-index: -1;
 }
 
 .bg-left {
@@ -126,13 +126,13 @@ td button:hover {
 
 .content-wrapper {
   position: relative;
-  z-index: 0; /* au-dessus du fond */
+  z-index: 0;
   min-height: 100vh;
   padding-top: 2rem;
 }
 
 .table-title{
-  font-family: var(--font-heading); /* Berkshire Swash */
+  font-family: var(--font-heading);
   font-size: 3rem;
   text-align: center;
   color: white;

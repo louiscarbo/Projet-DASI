@@ -1,7 +1,7 @@
-/* 1) Google Fonts */
+/* Google Fonts */
 @import url('https://fonts.googleapis.com/css2?family=Berkshire+Swash&family=Corinthia:wght@400;700&family=Forum&display=swap');
 
-/* 2) Variables : polices, couleurs, dégradés */
+/* Variables globales au projet : polices, couleurs, dégradés */
 :root {
     /* typographies */
     --font-serif:    'Forum', serif;
@@ -56,7 +56,7 @@ h1 {
     background: var(--gradient-in);
 }
 
-/* COMPOSANTS : Body dégradé et centré */
+/* COMPOSANT : Body dégradé et centré */
 .gradient-body {
     background: linear-gradient(to bottom, var(--bg-start), var(--bg-end));
     min-height: 100vh;
