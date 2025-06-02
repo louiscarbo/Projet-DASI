@@ -15,7 +15,6 @@ section {
     margin: 0px 0px 0px auto;
 }
 
-/* 1) Container */
 #filterPanel {
   position: fixed;
   top: 0;
@@ -31,7 +30,6 @@ section {
   z-index: 999;
 }
 
-/* 2) Close button */
 #btnCloseFilter {
   align-self: flex-end;
   background: none;
@@ -41,14 +39,12 @@ section {
   margin-bottom: 1rem;
 }
 
-/* 3) Heading */
 #filterPanel h2 {
   font-family: var(--font-heading);
   text-align: center;
   margin: 0 0 1rem;
 }
 
-/* 4) Fieldsets */
 #filterPanel fieldset {
   border: 1px solid #ccc;
   border-radius: 8px;
@@ -60,7 +56,6 @@ section {
   margin-bottom: 0.5rem;
 }
 
-/* 5) Labels & inputs */
 #filterPanel label {
   display: block;
   margin-bottom: 0.5rem;
@@ -72,7 +67,6 @@ section {
   vertical-align: middle;
 }
 
-/* 7) Error box inside panel */
 #filterPanel #error:empty {
   display: none;
 }
@@ -107,7 +101,6 @@ section > table:first-of-type td input {
   color: #000;
 }
 
-/* ——— Results table ——— */
 section > table:nth-of-type(2) {
   width: 100%;
   max-width: var(--content-width, 800px);
@@ -117,7 +110,6 @@ section > table:nth-of-type(2) {
   overflow: hidden;
 }
 
-/* Header row */
 section > table:nth-of-type(2) thead {
   background: var(--gradient-in);
 }
@@ -129,7 +121,6 @@ section > table:nth-of-type(2) th {
   color: #333;
 }
 
-/* Body rows */
 section > table:nth-of-type(2) td {
   padding: 0.75rem 1rem;
   background: #fff;

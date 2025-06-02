@@ -8,7 +8,6 @@
     justify-content: center;
 }
 
-/* Carte centrale */
 .card-connexion {
     background-color: white;
     border-radius: 20px;
@@ -18,13 +17,11 @@
     text-align: center;
 }
 
-/* Image boule de cristal */
 .icon-ball {
     width: 80px;
     margin-bottom: 1rem;
 }
 
-/* Labels stylisés */
 .fancy-label {
     display: block;
     font-family: var(--font-cursive);

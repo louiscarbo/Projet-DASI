@@ -31,7 +31,6 @@
   padding-bottom: 1rem;
 }
 
-/* Prédictions comme carte */
 .aec-preds {
   background: #fff;
   border-radius: 0.75rem;
@@ -60,7 +59,6 @@
   color: #000;
 }
 
-/* Contrôles comme carte */
 .aec-controls {
   background: #fff;
   border-radius: 0.75rem;
@@ -89,7 +87,6 @@
   margin-top: 0.5rem;
 }
 
-/* Commentaire comme carte */
 .aec-comment {
   background: #fff;
   border-radius: 0.75rem;

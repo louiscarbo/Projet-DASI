@@ -45,15 +45,14 @@ article img {
     font-size: 2rem;
 }
 
-/* 1) Make the nav a row that pushes its contents to the far right */
 nav {
-  max-width: 800px;       /* exactly your content width */
-  margin: 0 auto;         /* center it in the viewport */
-  padding: 1rem 0;        /* vertical breathing room */
-  display: flex;          /* flex row, left→right */
-  justify-content: flex-end;  /* push child(ren) to the right edge */
-  align-items: center;    /* vertical centering if nav has height */
-  gap: 1rem;              /* space between menu button and auth links */
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 1rem 0;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 1rem;
 }
 
 #authLinks {

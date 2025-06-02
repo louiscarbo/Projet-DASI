@@ -1,4 +1,3 @@
-/* Sidebar off-screen by default */
 #sideMenu {
   position: fixed;
   top: 0;
@@ -9,35 +8,30 @@
   background: linear-gradient(to bottom right, #fffafc, #d6d6ff);
   font-family: var(--font-sans);
 
-  /* slide off-screen */
   transform: translateX(-100%);
   transition: transform 0.3s ease-in-out;
   z-index: 1001;
 }
 
-/* Slide back in when “open” */
 #sideMenu.open {
   transform: translateX(0);
 }
 
-/* Menu list reset */
 #sideMenu ul {
   list-style: none;
   margin: 0;
   padding: 0;
 }
 
-/* Spacing between items */
 #sideMenu li {
   margin: 1em 0;
 }
 
-/* Link styling */
 #sideMenu a {
   display: block;
-  padding: 0.5em 0;           /* vertical breathing room */
+  padding: 0.5em 0;
   text-decoration: none;
-  color: #333;                /* fix your hex code */
+  color: #333;
   font-size: 1.1em;
   font-weight: 500;
   transition: color 0.2s ease, transform 0.2s ease;
@@ -47,12 +41,10 @@
   transform: translateX(5px);
 }
 
-/* “Déconnexion” link in red */
 #logoutLink {
   color: #c62828;
 }
 
-/* Overlay hidden by default */
 #menuOverlay {
   position: fixed;
   top: 0; left: 0;
@@ -61,10 +53,9 @@
   opacity: 0;
   visibility: hidden;
   transition: opacity 0.3s ease-in-out;
-  z-index: 1000; /* one less than the menu’s z-index */
+  z-index: 1000;
 }
 
-/* When “open” class is added, fade in */
 #menuOverlay.open {
   opacity: 1;
   visibility: visible;

@@ -51,6 +51,8 @@ import web.vue.ProchaineConsultationSerialisation;
 import web.vue.ProfilAstralSerialisation;
 import web.vue.ReserverConsultationSerialisation;
 import web.vue.TerminerConsultationSerialisation;
+import web.modele.ClientInfoAction;
+import web.vue.ClientInfoSerialisation;
 
 /**
  *
@@ -165,6 +167,12 @@ protected void processRequest(HttpServletRequest request, HttpServletResponse re
             new ObtenirStatistiquesAction(service).execute(request);
             new ObtenirStatistiquesSerialisation().appliquer(request, response);
             break;
+            
+        case "clientInfo":
+            new ClientInfoAction(service).execute(request);
+            new ClientInfoSerialisation().appliquer(request, response);
+            break;
+
 
         default:
             response.sendError(HttpServletResponse.SC_BAD_REQUEST, "Action inconnue");

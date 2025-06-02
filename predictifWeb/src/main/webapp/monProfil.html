@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="fr">
+    <head>
+        <meta charset="UTF-8">
+        <title>Mon Compte</title>
+        <link rel="stylesheet" href="css/style.css">
+        <link rel="stylesheet" href="css/monProfil.css">
+        <script src="js/menu.js" defer></script>
+        <script src="js/monProfil.js" defer></script>
+
+    </head>
+    <body class="gradient-body">      
+        <button id="btnMenu" style="display:none" class="btn-primary">☰ Menu</button>
+
+        <main class="profile-content">
+            <h1>Mon Compte</h1>
+            <img src="assets/avatar.png" alt="Avatar" class="avatar-img">
+
+            <div class="info-field"><label for='nom'>Nom</label><input id="nom" readonly></div>
+            <div class="info-field"><label for='prenom'>Prénom</label><input id="prenom" readonly></div>
+            <div class="info-field"><label  for='dateNaissance'>Date de naissance</label><input id="dateNaissance" readonly></div>
+            <div class="info-field"><label for='tel'>Tel</label><input id="tel" readonly></div>
+            <div class="info-field"><label for='adresse'>Adresse</label><input id="adresse" readonly></div>
+        </main>
+    </body>
+</html>

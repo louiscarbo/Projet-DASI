@@ -16,8 +16,7 @@
 
   <div class="content-wrapper">
     <header>
-       
-        <a href="index.html" class="btn-primary" style="margin : 1rem;">Accueil </a>
+        <button id="btnMenu" style="display:none" class="btn-primary">☰ Menu</button>
     </header>
 
     <main class="historique-layout">
@@ -27,12 +26,6 @@
           <label><input type="checkbox" id="filterCarto"> Cartomancien</label>
           <label><input type="checkbox" id="filterSpirite"> Spirite</label>
           <label><input type="checkbox" id="filterAstro"> Astrologue</label>
-        </div>
-        <div class="select-box">
-          <label for="filterMedium">Médium</label>
-          <select id="filterMedium" class="form-input">
-            <option value="">Tous</option>
-          </select>
         </div>
         <div class="date-box">
           <label for="filterSince">Depuis</label>
@@ -63,5 +56,6 @@
   </div>
 
   <script src="js/historique.js"></script>
+  <script src="js/menu.js"></script>
 </body>
 </html>
