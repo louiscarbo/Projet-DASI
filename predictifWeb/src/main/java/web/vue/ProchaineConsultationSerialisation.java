@@ -29,7 +29,6 @@ public class ProchaineConsultationSerialisation extends Serialisation {
             }
             if (consult != null) {
                 json.addProperty("success", true);
-                // on peut ajouter d'autres données de Consultation ici si besoin
             } else {
                 json.addProperty("success", false);
             }

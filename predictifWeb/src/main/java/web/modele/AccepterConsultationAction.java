@@ -24,7 +24,6 @@ public class AccepterConsultationAction extends Action {
                 // 1) Charger la consultation
                 Consultation c = service.ConsultationParID(id);
                 if (c != null) {
-                    // 2) Appeler le service
                     service.accepterConsultation(c);
                     success = true;
                 } else {

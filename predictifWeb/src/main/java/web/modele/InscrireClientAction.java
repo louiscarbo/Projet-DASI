@@ -45,7 +45,7 @@ public class InscrireClientAction extends Action {
                 session.setAttribute("client", client);
             }
 
-        } catch (IOException | java.text.ParseException ex) {
+        } catch (Exception ex) {
             ex.printStackTrace();
             request.setAttribute("inscrit", false);
         }

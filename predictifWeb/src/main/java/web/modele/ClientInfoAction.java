@@ -1,7 +1,6 @@
 package web.modele;
 
 import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
 import modele.Client;
 import service.Service;
 

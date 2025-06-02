@@ -18,6 +18,5 @@ public class DeconnecterEmployeAction extends Action {
         if (session != null) {
             session.invalidate();
         }
-        // on ne met rien en attribut, la sérialisation renverra simplement success
     }
 }

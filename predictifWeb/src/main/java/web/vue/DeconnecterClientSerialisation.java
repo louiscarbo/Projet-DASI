@@ -21,7 +21,7 @@ public class DeconnecterClientSerialisation extends Serialisation {
             Gson gson = new GsonBuilder().setPrettyPrinting().create();
             JsonObject json = new JsonObject();
             
-            // On décide de renvoyer toujours success:true, on garde deux classes
+            // On décide de renvoyer toujours success:true, on garde deux classes (Action/Serialisation)
             // pour garder la même structure dans tout le projet.
             json.addProperty("success", true);
             String output = gson.toJson(json);

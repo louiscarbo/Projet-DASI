@@ -8,8 +8,7 @@ import modele.MediumStats;
 import service.Service;
 
 /**
- * Cette Action rassemble, en une seule exécution, les trois listes
- * nécessaires pour la page Statistiques : 
+ * Cette Action rassemble les trois listes nécessaires pour la page Statistiques :
  *   - liste des Clients (pour la carte),
  *   - liste des EmployeStat (nb clients par employé),
  *   - liste des MediumStats (nb consultations par médium).
@@ -22,12 +21,10 @@ public class ObtenirStatistiquesAction extends Action {
 
     @Override
     public void execute(HttpServletRequest request) {
-        // Appel unique au Service pour récupérer les 3 collections
         List<Client> listeClients         = service.listerClients();
         List<EmployeStat> listeEmpStats   = service.rechercherNbClientParEmploye();
         List<MediumStats> listeMedStats   = service.rechercherNbConsultationsMedium();
 
-        // On met tout dans l'objet request
         request.setAttribute("clients", listeClients);
         request.setAttribute("employes", listeEmpStats);
         request.setAttribute("mediums", listeMedStats);

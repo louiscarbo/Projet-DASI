@@ -6,7 +6,6 @@ import java.io.IOException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import modele.Client;
-import java.text.SimpleDateFormat;
 
 public class ClientInfoSerialisation extends Serialisation {
     @Override

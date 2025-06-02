@@ -5,7 +5,6 @@
  */
 package web.modele;
 
-import java.util.List;
 import modele.Medium;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;

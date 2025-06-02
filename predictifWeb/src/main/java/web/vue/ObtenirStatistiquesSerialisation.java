@@ -15,10 +15,7 @@ import modele.EmployeStat;
 import modele.MediumStats;
 
 /**
- * Cette Serialisation construit un unique JSON contenant trois tableaux :
- *   - "clients": [ {id, prenom, nom, dateNaissance, tel, adresse, coordLat, coordLng}, … ]
- *   - "employes": [ {id, prenom, nom, nbClients}, … ]
- *   - "mediums":  [ {id, nom, specialite, nbClients}, … ]
+ * Cette Serialisation construit un unique JSON contenant trois tableaux : clients, employes, mediums
  */
 public class ObtenirStatistiquesSerialisation extends Serialisation {
 
@@ -36,7 +33,7 @@ public class ObtenirStatistiquesSerialisation extends Serialisation {
         Gson gson = new GsonBuilder().setPrettyPrinting().create();
         JsonObject root = new JsonObject();
 
-        // 1) Tableau "clients"
+        // Tableau "clients"
         JsonArray arrClients = new JsonArray();
         if (clients != null) {
             SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
@@ -60,7 +57,7 @@ public class ObtenirStatistiquesSerialisation extends Serialisation {
         }
         root.add("clients", arrClients);
 
-        // 2) Tableau "employes"
+        // Tableau "employes"
         JsonArray arrEmployes = new JsonArray();
         if (employes != null) {
             for (EmployeStat es : employes) {
@@ -74,7 +71,7 @@ public class ObtenirStatistiquesSerialisation extends Serialisation {
         }
         root.add("employes", arrEmployes);
 
-        // 3) Tableau "mediums"
+        // Tableau "mediums"
         JsonArray arrMediums = new JsonArray();
         if (mediums != null) {
             for (MediumStats ms : mediums) {
@@ -88,7 +85,6 @@ public class ObtenirStatistiquesSerialisation extends Serialisation {
         }
         root.add("mediums", arrMediums);
 
-        // 4) Indicateur de succès
         root.addProperty("success", true);
 
         out.println(gson.toJson(root));

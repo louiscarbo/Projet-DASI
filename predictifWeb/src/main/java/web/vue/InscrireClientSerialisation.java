@@ -15,7 +15,6 @@ public class InscrireClientSerialisation extends Serialisation {
 
     @Override
     public void appliquer(HttpServletRequest request, HttpServletResponse response) throws IOException {
-        // Récupération du résultat d'inscription placé par l'Action
         Boolean inscrit = (Boolean) request.getAttribute("inscrit");
 
         response.setContentType("application/json;charset=UTF-8");
